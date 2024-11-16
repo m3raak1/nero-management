@@ -25,9 +25,6 @@ Colaboração e Discussão: A equipe utiliza comentários e notificações para 
 - Login: Já que o Nero é um sistema local de gerenciamento de experimentos é necessario realizar o login inicialmente.
 
 - Home/Dashboard: Dependendo do tipo de usuario o dashboard será diferente. Basicamente o dashboard terá uma barra lateral que identificará o usuario e redirecionamentos para outras partes do sistema (nav bar) como a sessão de pesquisas ao qual o usuario estará inserido e seus respectivos experimentos. Ao abrir o dashboard terá atualizações sobre pesquisas e experimentos alem de alertas e notificações. Será o centro do sistema.
-
-Para incluir o resumo de permissões no arquivo `README.md` do seu projeto, você pode formatá-lo utilizando a sintaxe de tabelas do Markdown. Aqui está como o resumo de permissões ficaria no formato Markdown:
-
 ---
 
 ## Resumo de Permissões do Sistema
