@@ -25,9 +25,9 @@ defineProps({
                 </span>
             </a>
             <!-- Pesquisas -->
-            <a class="flex justify-center items-center mr-4">
-                <img class="pt-10 h-7 w-auto" v-bind:src="pesquisaspic" alt="Pesquisas" />
-                <span class="pt-5 hidden md:block text-white text-1xl ml-2">
+            <a class="p-10 flex justify-center items-center">
+                <img class="h-7 w-auto" v-bind:src="pesquisaspic">
+                <span class="hidden md:block text-white text-1xl ml-2">
                     Pesquisas
                 </span>
             </a>
