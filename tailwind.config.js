@@ -9,6 +9,12 @@ export default {
       },
       gridTemplateColumns: {
         '70/30': '70% 28%'
+      },
+      colors: {
+        indigoNavbarBg: '#1D1E44',
+        indigoNavbarSt: '#282749',
+        indigoBackground: '#141432',
+        indigoHoverButton: '#282551',
       }
     },
   },

@@ -1,6 +1,5 @@
 <script setup>
 import userpic from '@/assets/img/userpic.png'
-import pesquisasicon from '@/assets/img/abapesquisas.png'
 import Svg from '@/components/Svg.vue'
 import { defineProps } from 'vue';
 
@@ -13,36 +12,36 @@ defineProps({
 </script>
 
 <template>
-    <div class="itens items-baseline justify bg-indigo-900">
+    <div class="w-64 itens items-baseline justify bg-indigoNavbarBg border-r border-indigoNavbarSt">
         <div class="py-4 px-6">
             <!-- User Profile -->
-            <a class="flex justify-center items-center" href="index.html">
-                <img class="pt-10 h-15 w-auto" v-bind:src="userpic" alt="User Picture" />
+            <a class="flex justify-center pt-8" href="index.html">
+                <img class=" h-15 w-auto" v-bind:src="userpic" alt="User Picture" />
             </a>
             <!-- User Name -->
-            <a class="pt-5 flex justify-center items-center text-white text-2xl font-bold" href="index.html">
+            <a class="flex justify-center pt-4 text-white text-2xl font-sans" href="index.html">
                 {{ username }}
             </a>
         </div>
 
         <div class=" place-self-end ">
             <a class="" href="pesquisas.html">
-                <Svg name="Pesquisas" />
+                <Svg name="Pesquisas" class="drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </a>
         </div>
-        <div class=" place-self-end ">
+        <div class=" place-self-end">
             <a class="" href="experimentos.html">
-                <Svg name="Experimentos" />
+                <Svg name="Experimentos" class="drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </a>
         </div>
         <div class=" place-self-end ">
             <a class="" href="relatorios.html">
-                <Svg name="Relatórios" />
+                <Svg name="Relatórios" class="drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </a>
         </div>
         <div class=" place-self-end ">
             <a class="" href="equipes.html">
-                <Svg name="Equipes" />
+                <Svg name="Equipes" class="drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </a>
         </div>
     </div>
