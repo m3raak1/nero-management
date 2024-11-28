@@ -1,7 +1,7 @@
 <svg width="218" height="52" viewBox="0 0 218 52" fill="none" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <g clip-path="url(#clip0_75_30)">
-        <rect x="5.5" y="5.5" width="41" height="41" rx="20.5" fill="#282551" stroke="#2E2F56" />
+        <rect x="5.5" y="5.5" width="41" height="41" rx="20.5" fill="#202020" stroke="#4C4C4C" />
         <rect x="15" y="15" width="22" height="22" fill="url(#pattern0_75_30)" />
     </g>
     <text fill="white" xml:space="preserve" style="white-space: pre" font-family="Instrument Sans"

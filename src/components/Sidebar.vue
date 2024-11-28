@@ -41,7 +41,7 @@ defineProps({
         </div>
         <div class=" place-self-end ">
             <a class="" href="equipes.html">
-                <Svg name="Equipes" class="drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
+                <Svg name="Equipes" class="drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton fill-black" />
             </a>
         </div>
     </div>
