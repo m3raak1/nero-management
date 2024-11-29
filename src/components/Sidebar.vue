@@ -1,5 +1,6 @@
 <script setup>
 import userpic from '@/assets/img/userpic.png'
+import sair from '@/assets/img/sair 1.png'
 import Svg from '@/components/Svg.vue'
 import { defineProps } from 'vue';
 
@@ -12,7 +13,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="w-64 itens items-baseline justify bg-indigoNavbarBg border-r border-indigoNavbarSt">
+    <section class="w-64 itens items-baseline justify  bg-indigoNavbarBg border-r border-indigoNavbarSt">
         <div class="py-4 px-6">
             <!-- User Profile -->
             <a class="flex justify-center pt-8" href="index.html">
@@ -26,23 +27,29 @@ defineProps({
 
         <div class=" place-self-end ">
             <a class="" href="pesquisas.html">
-                <Svg name="Pesquisas" class="drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
+                <Svg name="Pesquisas" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </a>
         </div>
         <div class=" place-self-end">
             <a class="" href="experimentos.html">
-                <Svg name="Experimentos" class="drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
+                <Svg name="Experimentos" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </a>
         </div>
         <div class=" place-self-end ">
             <a class="" href="relatorios.html">
-                <Svg name="Relatórios" class="drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
+                <Svg name="Relatórios" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </a>
         </div>
         <div class=" place-self-end ">
             <a class="" href="equipes.html">
-                <Svg name="Equipes" class="drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton fill-black" />
+                <Svg name="Equipes" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton fill-black" />
             </a>
         </div>
-    </div>
+        <div class=" absolute bottom-8 left-20 drop-shadow-md hover:drop-shadow-3xl rounded-full ">
+            <a class="flex justify-center text-white font-sans " href="logout.html">
+                <img v-bind:src="sair">
+                <span class="pl-3">Logout</span>  
+            </a>
+        </div>
+    </section>
 </template>
