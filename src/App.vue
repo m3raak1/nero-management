@@ -8,5 +8,4 @@ import Pesquisas from '@/components/Pesquisas.vue';
     <Sidebar />
     <Pesquisas />
   </div>
-  <Resultado />
 </template>
