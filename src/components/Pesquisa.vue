@@ -1,20 +1,12 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 
-defineProps({
-    userInputTitle: {
-        type: String,
-        default: null
-    }
+
+const researchCatalog = ref([])
+onMounted( async() => {
+    const response = await fetch('http://localhost:3000/researchCatalog')
+    researchCatalog.value = await response.json();
 })
-const researchCatalog = ref([]);
-
-onMounted(() => {
-  fetch('http://localhost:3000/researchCatalog')
-    .then(res => res.json())
-    .then(data => researchCatalog.value = data)
-    .catch(err => console.log(err.message));
-});
 </script>
 
 
