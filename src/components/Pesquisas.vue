@@ -5,6 +5,7 @@ import { onMounted, ref, computed } from 'vue';
 
 const searchFilter = ref('')
 
+//Faz comunicação com o banco de dados. Obtém todas as pesquisas.
 const researchCatalog = ref([])
 onMounted( async() => {
     const response = await fetch('http://localhost:3000/researchCatalog')
@@ -13,8 +14,9 @@ onMounted( async() => {
 
 const filteredResults = computed(() => {
     if (searchFilter.value != '') {
-        return researchCatalog.value.filter(research => research.title.includes(searchFilter.value) ||
-            research.summary.includes(searchFilter.value));
+        return researchCatalog.value.filter(research => research.title.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
+            research.summary.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
+            research.responsible.toLowerCase().includes(searchFilter.value.toLowerCase()));
     }
     return researchCatalog.value;
 })
