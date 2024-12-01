@@ -15,7 +15,7 @@ const computers = ref({
 })
 
 const toggleAlphabetic = () => {
-    computers.alphabetic = [!computers.alphabetic[0], computers.alphabetic[1] === 'down' ? 'true' ? false]
+    computers.alphabetic = [!computers.alphabetic[0], computers.alphabetic[1] === 'down' ? "up" : "down"];
 }
 
 </script>
