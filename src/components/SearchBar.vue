@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 import searchIcon from '../assets/img/procurar 1.png'
 import SearchBarFilter from './SearchBarFilter.vue';
 import Svg from './Svg.vue';
@@ -10,8 +11,8 @@ const search = (e) => {
 };
 
 const computers = ref({
-    alphabetic: [false, down],
-    time: [true, down]
+    alphabetic: [false, "down"],
+    time: [true, "down"]
 })
 
 const toggleAlphabetic = () => {
