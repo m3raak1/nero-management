@@ -13,7 +13,7 @@ defineProps({
 </script>
 
 <template>
-    <section class="w-64 itens items-baseline justify  bg-indigoNavbarBg border-r border-indigoNavbarSt">
+    <section class="w-64 bg-indigoNavbarBg border-r border-indigoNavbarSt">
         <div class="py-4 px-6">
             <!-- User Profile -->
             <a class="flex justify-center pt-8" href="index.html">

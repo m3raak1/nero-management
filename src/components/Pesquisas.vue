@@ -26,7 +26,7 @@ const handleSearch = (search) => {
 </script>
 
 <template>
-    <div class="flex-1">
+    <div class="flex-1 h-screen overflow-y-scroll">
         <section class="px-12 pt-12 text-white text-4xl font-sans">
             <span>Pesquisas</span>
         </section>
