@@ -8,7 +8,8 @@ export default {
       'red-gradient': 'linear-gradient(#8B0000 0%, #ff0000 20%, #8B0000 100%)',
       'ruby-gradient': 'linear-gradient(90deg, rgba(255,0,0,1) -20%, rgba(125,0,0,1) 50%, rgba(255,0,0,1) 120%);',
       'sapphire-gradient': 'linear-gradient(90deg, rgba(75,93,255,1) -30%, rgba(54,0,181,1) 50%, rgba(75,93,255,1) 130%);',
-      'emerald-gradient': 'linear-gradient(90deg, rgba(0,255,38,1) -40%, rgba(0,91,11,1) 50%, rgba(0,255,38,1) 140%);'
+      'emerald-gradient': 'linear-gradient(90deg, rgba(0,255,38,1) -40%, rgba(0,91,11,1) 50%, rgba(0,255,38,1) 140%);',
+      'metal-gradient': 'linear-gradient(90deg, rgba(113,113,113,1) -20%, rgba(46,46,46,1) 50%, rgba(113,113,113,1) 120%);'
     },
     extend: {
       fontFamily: {

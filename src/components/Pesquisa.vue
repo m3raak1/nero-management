@@ -23,7 +23,9 @@ defineProps({
                 <p class="text-white mt-2 mb-4">
                     {{ search.summary }}
                 </p>
-                <h2 class="text-white">Responsável: {{ search.responsible }}</h2>
+                <div class="flex justify-between">
+                    <span class="text-white  block flex items-center bg-metal-gradient py-2 px-4 rounded-3xl text-sm">Equipe: Alfa</span>
+                </div>
             </a>
         </div>
     </div>
