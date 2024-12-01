@@ -6,6 +6,8 @@ export default {
     backgroundImage: {
       'silver-gradient': 'linear-gradient(90deg, #D1D1D1 0%, #a6a6a6 50%, #D1D1D1 100%)',
       'red-gradient': 'linear-gradient(#8B0000 0%, #ff0000 20%, #8B0000 100%)',
+      'ruby-gradient': 'linear-gradient(90deg, rgba(255,0,0,1) -20%, rgba(125,0,0,1) 50%, rgba(255,0,0,1) 120%);',
+      'sapphire-gradient': 'linear-gradient(90deg, rgba(75,93,255,1) -30%, rgba(54,0,181,1) 50%, rgba(75,93,255,1) 130%);'
     },
     extend: {
       fontFamily: {
