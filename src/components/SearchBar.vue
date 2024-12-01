@@ -14,7 +14,7 @@ const search = (e) => {
         <label class="sr-only">Buscar pesquisas</label>
         <img :src="searchIcon" class=" z-10 pointer-events-none pl-4"/>
         <div class="pl-3 w-full">
-            <input type="text" @input="search" class=" h-10 w-full outline-none rounded-full bg-indigoBackground text-gray-200 text-xl font-sans" placeholder="Buscar">
+            <input type="text" @input="search" class="py-3 pl-1 w-full outline-none rounded-full bg-indigoBackground text-gray-200 text-xl font-sans" placeholder="Buscar">
         </div>
     </form>
 </template>

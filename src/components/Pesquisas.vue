@@ -26,7 +26,7 @@ const handleSearch = (search) => {
 </script>
 
 <template>
-    <div class="flex-1 h-screen overflow-y-scroll">
+    <div class="flex-1 h-screen overflow-y-scroll scroll-m-1">
         <section class="px-12 pt-12 text-white text-4xl font-sans">
             <span>Pesquisas</span>
         </section>
@@ -37,7 +37,7 @@ const handleSearch = (search) => {
                     <!-- Obtém valor digitado na SearchBar -->
                     <SearchBar @search="handleSearch" />
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-1 gap-4 p-12 rounded-lg">
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
                     <!-- Recebe valores do catálogo ou valores filtrados -->
                     <Pesquisa :filteredResults="filteredResults"/>
                 </div>
