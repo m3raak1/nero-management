@@ -15,8 +15,9 @@ defineProps({
             <a :href="`pesquisa${search.researchId}.html`">
                 <div class="flex justify-between">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">{{ search.title }}</h2>
-                    <div class="h-auto">
+                    <div class="h-auto flex">
                         <span class="text-white h-full block flex items-center bg-sapphire-gradient px-4 rounded-3xl text-sm">Responsável: {{ search.responsible }}</span>
+                        <span class="text-white h-full block flex items-center bg-emerald-gradient px-4 ml-4 rounded-3xl text-sm">Status: {{ String(search.status).charAt(0).toUpperCase() + String(search.status).slice(1) }}</span>
                     </div>
                 </div>
                 <p class="text-white mt-2 mb-4">
