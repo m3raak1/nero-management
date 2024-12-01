@@ -3,6 +3,10 @@ export default {
   content: ['./index.html', './src/**/*.{vue, js, js, ts, jsx, tsx}'],
   
   theme: {
+    backgroundImage: {
+      'silver-gradient': 'linear-gradient(90deg, #D1D1D1 0%, #a6a6a6 50%, #D1D1D1 100%)',
+      'red-gradient': 'linear-gradient(#8B0000 0%, #ff0000 20%, #8B0000 100%)',
+    },
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif']
