@@ -16,6 +16,7 @@ export default {
         indigoBackground: '#0B0B0B',
         indigoHoverButton: '#4C4C4C',
         indigoButtomColor: '#202020',
+        borderColor: '#4C4C4C'
       }
     },
   },
