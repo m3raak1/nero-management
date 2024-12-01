@@ -20,9 +20,9 @@ defineProps({
                 <img class=" h-15 w-auto" v-bind:src="userpic" alt="User Picture" />
             </a>
             <!-- User Name -->
-            <a class="flex justify-center pt-4 text-white text-2xl font-sans" href="index.html">
+            <p class="flex justify-center pt-4 text-white text-2xl font-sans">
                 {{ username }}
-            </a>
+            </p>
         </div>
 
         <div class=" place-self-end ">

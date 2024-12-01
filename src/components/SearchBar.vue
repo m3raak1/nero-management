@@ -10,7 +10,7 @@ const search = (e) => {
 </script>
 
 <template>
-    <form class="flex items-center w-full rounded-full bg-indigoBackground">
+    <form class="flex items-center w-full rounded-full bg-indigoBackground border border-borderColor">
         <label class="sr-only">Buscar pesquisas</label>
         <img :src="searchIcon" class=" z-10 pointer-events-none pl-4"/>
         <div class="pl-3 w-full">
