@@ -11,7 +11,6 @@ const toggleFilter = () => {
 
 <template>
   <div class="absolute -translate-x-1/2 left-1/2 top-full z-10 flex items-center flex-col w-5/6 h-[230%] overflow-clip">
-    <!-- Container do filtro -->
     <div
       :class="[
         'w-full bg-indigoBackground border-borderColor border-2 p-4 rounded-b-2xl absolute transition-transform duration-300',
@@ -50,7 +49,6 @@ const toggleFilter = () => {
     </div>
   </div>
 
-  <!-- Botão SVG -->
   <span
     :class="[
       'absolute bg-indigoBackground px-2 py-3 rounded-b-2xl border-borderColor border-b border-x hover:cursor-pointer z-20 -translate-x-1/2 left-1/2 transition-transform duration-300',

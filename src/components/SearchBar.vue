@@ -1,6 +1,7 @@
 <script setup>
 import searchIcon from '../assets/img/procurar 1.png'
 import SearchBarFilter from './SearchBarFilter.vue';
+import Svg from './Svg.vue';
 
 const emit = defineEmits(['search'])
 const search = (e) => {
@@ -8,16 +9,34 @@ const search = (e) => {
     emit('search', e.target.value)
 };
 
+const computers = ref({
+    alphabetic: [false, down],
+    time: [true, down]
+})
+
+const toggleAlphabetic = () => {
+    computers.alphabetic = [!computers.alphabetic[0], computers.alphabetic[1] === 'down' ? 'true' ? false]
+}
+
 </script>
 
 <template>
     <form class="flex items-center w-full rounded-full bg-indigoBackground border border-borderColor relative">
         <label class="sr-only">Buscar pesquisas</label>
         <img :src="searchIcon" class=" z-10 pointer-events-none pl-4"/>
-        <div class="pl-3 w-full">
-            <input type="text" @input="search" class="py-3 pl-1 w-full outline-none rounded-full bg-indigoBackground text-gray-200 text-xl font-sans" placeholder="Buscar">
+        <div class="pl-3 w-full flex items-center justify-between">
+            <input type="text" @input="search" class="py-3 pl-1 w-4/6 outline-none rounded-full bg-indigoBackground text-gray-200 text-xl font-sans" placeholder="Buscar">
+            <div class="flex items-center px-6 gap-8">
+                <span class="relative">
+                    <Svg name="alphabetical"/>
+                    <Svg name="pointer" class="absolute -top-2 -right-3"/>
+                </span>
+                <span class="relative">
+                    <Svg name="clock"/>
+                    <Svg name="pointer" class="absolute -top-2 -right-3"/>
+                </span>
+            </div>
         </div>
         <SearchBarFilter />
-        
     </form>
 </template>
