@@ -16,8 +16,22 @@ const filteredResults = computed(() => {
             research.summary.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
             research.responsible.toLowerCase().includes(searchFilter.value.toLowerCase()));
     }
-    return researchCatalog.value;
+    return sortResults(researchCatalog.value, 'time-new');
 })
+
+const sortResults = (catalog, type) => {
+    switch (type) {
+        case 'alphabet-down': 
+            return catalog.sort((a, b) => a.title.localeCompare(b.title));
+        case 'alphabet-up':
+            return catalog.sort((a, b) => b.title.localeCompare(a.title));
+        case 'time-old':
+            return catalog;
+        case 'time-new':
+            return catalog.sort((a, b) => b.researchId - a.researchId   );
+    }
+}
+
 //Obtém valor digitado na search bar
 const searchFilter = ref('')
 const handleSearch = (search) => {
