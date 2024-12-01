@@ -18,5 +18,6 @@ const search = (e) => {
             <input type="text" @input="search" class="py-3 pl-1 w-full outline-none rounded-full bg-indigoBackground text-gray-200 text-xl font-sans" placeholder="Buscar">
         </div>
         <SearchBarFilter />
+        
     </form>
 </template>
