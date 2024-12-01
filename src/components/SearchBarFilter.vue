@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import Svg from './Svg.vue';
 
-const active = ref(true);
+const active = ref(false);
 
 const toggleFilter = () => {
     active.value = !active.value;
