@@ -16,7 +16,7 @@ defineProps({
     <section class="w-64 bg-indigoNavbarBg border-r border-indigoNavbarSt">
         <div class="py-4 px-6">
             <!-- User Profile -->
-            <a class="flex justify-center pt-8" href="index.html">
+            <a class="flex justify-center pt-8" href="/index.html">
                 <img class=" h-15 w-auto" v-bind:src="userpic" alt="User Picture" />
             </a>
             <!-- User Name -->
@@ -26,27 +26,27 @@ defineProps({
         </div>
 
         <div class=" place-self-end ">
-            <a class="" href="pesquisas.html">
+            <a class="" href="/pesquisas.html">
                 <Svg name="Pesquisas" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </a>
         </div>
         <div class=" place-self-end">
-            <a class="" href="experimentos.html">
+            <a class="" href="/experimentos.html">
                 <Svg name="Experimentos" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </a>
         </div>
         <div class=" place-self-end ">
-            <a class="" href="relatorios.html">
+            <a class="" href="/relatorios.html">
                 <Svg name="Relatórios" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </a>
         </div>
         <div class=" place-self-end ">
-            <a class="" href="equipes.html">
+            <a class="" href="/equipes.html">
                 <Svg name="Equipes" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton fill-black" />
             </a>
         </div>
         <div class=" absolute bottom-8 left-20 drop-shadow-md hover:drop-shadow-3xl rounded-full ">
-            <a class="flex justify-center text-white font-sans " href="logout.html">
+            <a class="flex justify-center text-white font-sans " href="/logout.html">
                 <img v-bind:src="sair">
                 <span class="pl-3">Logout</span>  
             </a>
