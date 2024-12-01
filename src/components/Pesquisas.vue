@@ -3,15 +3,13 @@ import Pesquisa from '@/components/Pesquisa.vue';
 import SearchBar from '@/components/SearchBar.vue';
 import { onMounted, ref, computed } from 'vue';
 
-const searchFilter = ref('')
-
 //Faz comunicação com o banco de dados. Obtém todas as pesquisas.
 const researchCatalog = ref([])
 onMounted( async() => {
     const response = await fetch('http://localhost:3000/researchCatalog')
     researchCatalog.value = await response.json();
 })
-
+//Filtra resultados de pesquisa com base no valor digitado na search bar. Filtra por título, sumário e responsável
 const filteredResults = computed(() => {
     if (searchFilter.value != '') {
         return researchCatalog.value.filter(research => research.title.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
@@ -20,6 +18,8 @@ const filteredResults = computed(() => {
     }
     return researchCatalog.value;
 })
+//Obtém valor digitado na search bar
+const searchFilter = ref('')
 const handleSearch = (search) => {
     searchFilter.value = search;
 };
@@ -34,9 +34,11 @@ const handleSearch = (search) => {
         <section class="py-8 px-12">
             <div class=" border rounded-3xl bg-indigoNavbarBg border-indigoNavbarSt">
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-4 p-12 rounded-lg">
+                    <!-- Obtém valor digitado na SearchBar -->
                     <SearchBar @search="handleSearch" />
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-4 p-12 rounded-lg">
+                    <!-- Recebe valores do catálogo ou valores filtrados -->
                     <Pesquisa :filteredResults="filteredResults"/>
                 </div>
             </div>
