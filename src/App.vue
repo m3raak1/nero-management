@@ -1,11 +1,11 @@
 <script setup>
-import Sidebar from '@/components/Sidebar.vue';
-import Pesquisas from '@/components/Pesquisas.vue';
+import Sidebar from './components/Sidebar.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
   <div class="flex min-h-screen bg-indigoBackground">
     <Sidebar />
-    <Pesquisas />
+    <RouterView />
   </div>
 </template>
