@@ -3,40 +3,49 @@ import Pesquisa from '@/components/Pesquisa.vue';
 import SearchBar from '@/components/SearchBar.vue';
 import { onMounted, ref, computed } from 'vue';
 
-//Faz comunicação com o banco de dados. Obtém todas as pesquisas.
-const researchCatalog = ref([])
-onMounted( async() => {
-    const response = await fetch('http://localhost:3000/researchCatalog')
-    researchCatalog.value = await response.json();
-})
-//Filtra resultados de pesquisa com base no valor digitado na search bar. Filtra por título, sumário e responsável
-const filteredResults = computed(() => {
-    if (searchFilter.value != '') {
-        return researchCatalog.value.filter(research => research.title.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
-            research.summary.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
-            research.responsible.toLowerCase().includes(searchFilter.value.toLowerCase()));
-    }
-    return sortResults(researchCatalog.value, 'time-new');
-})
-const sortResults = (catalog, type) => {
-    switch (type) {
-        case 'alphabet-down': 
-            return catalog.sort((a, b) => a.title.localeCompare(b.title));
-        case 'alphabet-up':
-            return catalog.sort((a, b) => b.title.localeCompare(a.title));
-        case 'time-old':
-            return catalog;
-        case 'time-new':
-            return catalog.sort((a, b) => b.researchId - a.researchId   );
-    }
-}
+const researchCatalog = ref([]);
+onMounted(async () => {
+  const response = await fetch('http://localhost:3000/researchCatalog');
+  researchCatalog.value = await response.json();
+});
 
-//Obtém valor digitado na search bar
-const searchFilter = ref('')
+const searchFilter = ref('');
+const filterOrder = ref('time-down');
+
+const sortResults = (catalog, type) => {
+  const sortedCatalog = [...catalog]; 
+  switch (type) {
+    case 'alphabet-down':
+      return sortedCatalog.sort((a, b) => a.title.localeCompare(b.title));
+    case 'alphabet-up':
+      return sortedCatalog.sort((a, b) => b.title.localeCompare(a.title));
+    case 'time-down':
+      return sortedCatalog.sort((a, b) => b.researchId - a.researchId);
+    case 'time-up':
+      return sortedCatalog.sort((a, b) => a.researchId - b.researchId);
+  }
+};
+
+const filteredResults = computed(() => {
+  let results = researchCatalog.value;
+
+  if (searchFilter.value !== '') {
+    results = results.filter(research =>
+      research.title.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
+      research.summary.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
+      research.responsible.toLowerCase().includes(searchFilter.value.toLowerCase())
+    );
+  }
+
+  return sortResults(results, filterOrder.value);
+});
+
 const handleSearch = (search) => {
-    searchFilter.value = search.value;
+  searchFilter.value = search.value;
+  filterOrder.value = search.order.type + '-' + search.order.direction;
 };
 </script>
+
 
 <template>
     <div class="flex-1 h-screen overflow-y-scroll scroll-m-1">
