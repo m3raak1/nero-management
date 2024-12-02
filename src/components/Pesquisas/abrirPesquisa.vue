@@ -14,9 +14,31 @@ const experimentsCatalog = ref([]);
 const reportsCatalog = ref([]);
 onMounted(async () => {
     const response = await fetch('http://localhost:3000/researchCatalog')
-    researchCatalog.value = await response.json();
+    const researchJson = await response.json();
+
+    for (let element of researchJson) {
+        const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
+        const responsibleArray = await responsibleResponse.json();
+        element.responsible = responsibleArray[0]
+
+        const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.team}`);
+        const teamArray = await teamResponse.json();
+        element.team = teamArray[0]
+    }
+
+    researchCatalog.value = researchJson;
+
     const response2 = await fetch('http://localhost:3000/experimentsCatalog')
-    experimentsCatalog.value = await response2.json();
+    const experimentJson = await response2.json();
+
+    for (let element of experimentJson) {
+        const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
+        const responsibleArray = await responsibleResponse.json();
+        element.responsible = responsibleArray[0]
+    } 
+
+    experimentsCatalog.value = experimentJson;
+
     const response3 = await fetch('http://localhost:3000/reportsCatalog')
     reportsCatalog.value = await response3.json();
 })
@@ -48,15 +70,15 @@ const reportsByResearchId = computed(() => {
                 class=" min-h-screen border rounded-3xl bg-indigoNavbarBg border-indigoNavbarSt">
                 <div class=" p-7  border-b-2 border-indigoNavbarSt">
                     <div class="flex justify-between">
-                        <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">{{
+                        <h2 class="text-3xl text-transparent bg-red-gradient bg-clip-text font-bold">{{
                             researchById[0].title }}</h2>
                         <div class="h-auto flex">
                             <span
                                 class="text-white flex items-center bg-metal-gradient py-2 px-4 rounded-3xl text-sm">Equipe:
-                                Alfa</span>
+                                {{ researchById[0].team.name }}</span>
                             <span
                                 class="text-white h-full flex items-center bg-sapphire-gradient px-4 ml-4 rounded-3xl text-sm">Responsável:
-                                {{ researchById[0].responsible }}</span>
+                                {{ researchById[0].responsible.name }}</span>
                             <span
                                 class="text-white h-full flex items-center bg-emerald-gradient px-4 ml-4 rounded-3xl text-sm">Status:
                                 {{ String(researchById[0].status).charAt(0).toUpperCase() +
