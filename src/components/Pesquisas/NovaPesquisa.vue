@@ -1,3 +1,23 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const teamsCatalog = ref([]);
+const usersCatalog = ref([]);
+
+onMounted(async () => {
+  const teamsResponse = await fetch('http://localhost:3000/teams');
+  const teamsData = await teamsResponse.json();
+
+  teamsCatalog.value = teamsData;
+
+  const usersResponse = await fetch('http://localhost:3000/users');
+  const usersData = await usersResponse.json();
+
+  usersCatalog.value = usersData;
+});
+
+</script>
+
 <template>
     <div class="flex-1 h-screen overflow-y-scroll scroll-m-1">
         <section class="px-12 pt-12 text-4xl font-sans">
@@ -14,7 +34,7 @@
                             <div class="flex items-center gap-2">
                                 <label>Equipe</label>
                                 <select class="px-4 py-1 bg-metal-gradient rounded-3xl">
-                                    <option value="">Alfa</option>
+                                    <option class="bg-indigoNavbarBg" v-for="(team, i) in teamsCatalog" :key="i" :value="team.name">{{ team.name }}</option>
                                 </select>
                             </div>
                             <!-- Data -->
@@ -28,7 +48,7 @@
                     <div class="my-6">
                         <input class="text-lg py-2 px-2 border-b border-borderColor" list="users" placeholder="Responsavel">
                         <datalist id="users" placeholder="Responsavel">
-                            <option value="Anthony Passos"></option>
+                            <option v-for="(user, i) in usersCatalog" :key="i" :value="user.name"></option>
                         </datalist>
                     </div>
                     <!-- Objetivo -->
