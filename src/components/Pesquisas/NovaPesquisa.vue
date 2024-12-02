@@ -1,39 +1,103 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+import axios from 'axios';
 
 const teamsCatalog = ref([]);
 const usersCatalog = ref([]);
 
 onMounted(async () => {
+  // Fetching teams and users data on component mount
   const teamsResponse = await fetch('http://localhost:3000/teams');
   const teamsData = await teamsResponse.json();
-
   teamsCatalog.value = teamsData;
 
   const usersResponse = await fetch('http://localhost:3000/users');
   const usersData = await usersResponse.json();
-
   usersCatalog.value = usersData;
 });
 
 const inputData = ref({
-    title: '',
-    team: '',
+    title: 'Algum Ai',
+    team: 'Alfa',
     startDate: '',
-    responsible: '',
-    objective: '',
-    summaryTitle: '',
-    summary: ''
-})
+    responsible: 'Ayla Nogueira',
+    objective: 'algum ai',
+    summaryTitle: 'algum ai',
+    summary: 'algum ai'
+});
 
-const tried = ref(false)
+const tried = ref(false);
 
-const submitResearch = (e) => {
-    tried.value = true
-    if (Object.values(inputData).includes('')) return
+async function postData(data = {}) {
+    console.log("Enviando dados:", JSON.stringify(data));
+    const response = await fetch('http://localhost:3000/researchCatalog', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    return response.json();
 }
 
+const transformObj = async (obj) => {
+    const newObj = {
+        researchId: 0,
+        title: obj.title,
+        objective: obj.objective,
+        summary: obj.summary,
+        responsible: 0,
+        team: 0,
+        startDate: obj.startDate,
+        endDate: null,
+        status: "Em andamento",
+        conclusion: ''
+    };
+
+    // Get the total number of research items (to set researchId)
+    const response = await fetch('http://localhost:3000/researchCatalog');
+    const data = await response.json();
+    newObj.researchId = data.length + 1; // Number of items in the researchCatalog
+
+    // Fetch user data to get responsible userId
+    const response2 = await fetch(`http://localhost:3000/users?name=${obj.responsible}`);
+    const data2 = await response2.json();
+    if (data2.length > 0) {
+        newObj.responsible = data2[0].userId;
+    } else {
+        console.error("User not found");
+    }
+
+    // Fetch team data to get teamId
+    const response3 = await fetch(`http://localhost:3000/teams?name=${obj.team}`);
+    const data3 = await response3.json();
+    if (data3.length > 0) {
+        newObj.team = data3[0].teamId;
+    } else {
+        console.error("Team not found");
+    }
+
+    return newObj;
+};
+
+// Submit research data
+const submitResearch = async (e) => {
+    tried.value = true;
+    // Check if any of the inputData fields are empty
+    if (Object.values(inputData.value).includes('')) {
+        console.error("Por favor, preencha todos os campos.");
+        return;
+    }
+    
+    // Transform the inputData object
+    const transformedData = await transformObj(inputData.value);
+    
+    // Send the transformed data to the server
+    const result = await postData(transformedData);
+    console.log("Dados enviados com sucesso:", result);
+};
 </script>
+
 
 <template>
     <div class="flex-1 h-screen overflow-y-scroll scroll-m-1">
