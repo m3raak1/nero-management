@@ -129,21 +129,48 @@
             ],
             "observations": [],
             "conclusion":""
-        }
+        },
+        {
+            "experimentId":2,
+            "researchId": 1,
+            "experimentTitle":"Contenção e Análise de Propriedades",
+            "responsible": "Dra. Beatriz Calado",
+            "objective": "Estudo da interação com materiais inertes.",
+            "startDate": "20/01/2024",
+            "endDate": "",
+            "status": "Em Andamento",
+            "protocol": {
+                "materials":[],
+                "procedures":[],
+                "measurementsAndTools":[]
+            },
+            "variables": {
+                "independent":[],
+                "dependents":[],
+                "controlled":[]
+            },
+            "results": [
+                {
+                    "measurement":"",
+                    "value":0,
+                    "unit":""
+                }
+            ],
+            "observations": [],
+            "conclusion":""
+        }           
     ],
-    "reports": [
+    "reportsCatalog": [
         {
             "reportId":1,
             "researchId":1,
             "experimentId":1,
+            "reportDate": "20/01/2024",
             "reportTitle": "Fusão com Matéria Orgânica",
             "reportAuthor": "Dr. Toninho Ferreira",
-            "reportObjective": "",
-            "reportSummary": "",
-            "reportProtocol": "",
             "reportResults": "",
             "reportDiscussion": "",
-            "reportConclusion": "",
+            "reportConclusion": "O Necroplasma reagiu de maneira agressiva ao tecido orgânico humano. A fusão foi irreversível, criando mutações imprevisíveis e deformadas. Observou-se que o tecido parasitado perdeu completamente sua cognição e funcionalidade original, funcionando apenas como veículo para o organismo.",
             "reportReferences": []
         }
     ]
