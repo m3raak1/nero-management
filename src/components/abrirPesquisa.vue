@@ -22,6 +22,11 @@ const researchById = computed(() => {
         research.researchId === researchId
     );
 });
+const experimentByResearchId = computed(() => {
+    return experimentsCatalog.value.filter((experiment) =>
+        experiment.researchId === researchId
+    );
+});
 </script>
 
 <template>
@@ -74,7 +79,7 @@ const researchById = computed(() => {
                     <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos Realizados</h2>
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
                         <!-- EXPERIMENTOS REALIZADOS -->
-                        <Experimentos :experiments="experimentsCatalog" />
+                        <Experimentos :experiments="experimentByResearchId" />
                     </div>
                 </div>
                 <div class=" min-h-64 border-b-2 border-indigoNavbarSt">
