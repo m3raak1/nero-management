@@ -85,7 +85,8 @@ const reportsByResearchId = computed(() => {
                     </p>
                 </div>
                 <div class="border-b-2 border-indigoNavbarSt">
-                    <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos Realizados</h2>
+                    <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos
+                        Realizados</h2>
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
                         <!-- EXPERIMENTOS REALIZADOS -->
                         <Experimentos :experiments="experimentByResearchId" />
@@ -98,11 +99,16 @@ const reportsByResearchId = computed(() => {
                         <Relatorios :reports="reportsByResearchId" />
                     </div>
                 </div>
-                <div class=" min-h-64 border-b-2 border-indigoNavbarSt">
-
+                <div class=" p-7 border-b-2 border-indigoNavbarSt">
+                    <!-- RESULTADOS QUANTITATIVOS -->
+                    <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Resultados Quantitativos</h2>
+                    
                 </div>
-                <div class=" min-h-64 border-indigoNavbarSt">
-
+                <div class=" p-7">
+                    <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Considerações Finais</h2>
+                    <p class="pb-5 pt-10 text-white">
+                        {{ researchById[0].conclusion }}
+                    </p>
                 </div>
             </div>
         </section>
