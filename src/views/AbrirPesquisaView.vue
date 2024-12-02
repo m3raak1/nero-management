@@ -1,5 +1,5 @@
 <script setup>
-    import abrirPesquisa from '../components/abrirPesquisa.vue';
+    import abrirPesquisa from '../components/Pesquisas/abrirPesquisa.vue';
 </script>
 
 <template>

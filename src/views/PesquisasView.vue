@@ -1,5 +1,5 @@
 <script setup>
-import Pesquisas from '../components/Pesquisas.vue';
+import Pesquisas from '../components/Pesquisas/Pesquisas.vue';
 </script>
 
 <template>

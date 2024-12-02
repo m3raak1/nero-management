@@ -1,6 +1,6 @@
 <script setup>
-import Pesquisa from '@/components/Pesquisa.vue';
-import SearchBar from '@/components/SearchBar.vue';
+import Pesquisa from '@/components/Pesquisas/Pesquisa.vue';
+import SearchBar from '@/components/Pesquisas/SearchBar.vue';
 import { onMounted, ref, computed, provide } from 'vue';
 
 const researchCatalog = ref([]);
@@ -20,7 +20,6 @@ onMounted(async () => {
   }
 
   researchCatalog.value = data;
-  console.log(data[0].responsible[0]);
 });
 
 const searchFilter = ref('');

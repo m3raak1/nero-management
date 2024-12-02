@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, inject } from 'vue';
-import Svg from './Svg.vue';
+import Svg from '../Svg.vue';
 
 const dataFilter = ref({
     users: [],

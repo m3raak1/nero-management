@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import searchIcon from '../assets/img/procurar 1.png'
+import searchIcon from '../../assets/img/procurar 1.png'
 import SearchBarFilter from './SearchBarFilter.vue';
-import Svg from './Svg.vue';
+import Svg from '../Svg.vue';
 
 
 const emit = defineEmits(['search'])
