@@ -10,9 +10,9 @@ onMounted(async () => {
   const data = await response.json();
 
   for (let element of data) {
-    const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.reportAuthor}`);
+    const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
     const responsibleArray = await responsibleResponse.json();
-    element.reportAuthor = responsibleArray[0]
+    element.responsible = responsibleArray[0]
 
     const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.team}`);
     const teamArray = await teamResponse.json();
@@ -25,7 +25,7 @@ onMounted(async () => {
 const searchFilter = ref('');
 const filterOrder = ref('time-down');
 const filters = ref({
-    reportAuthor: '',
+    responsible: '',
     team: ''
 });
 
@@ -49,8 +49,8 @@ const filteredResults = computed(() => {
   if (searchFilter.value !== '') {
     results = results.filter(research =>
       research.reportTitle.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
-      research.summary.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
-      research.reportAuthor.name.toLowerCase().includes(searchFilter.value.toLowerCase())
+      research.reportConclusion.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
+      research.responsible.name.toLowerCase().includes(searchFilter.value.toLowerCase())
     );
   }
 

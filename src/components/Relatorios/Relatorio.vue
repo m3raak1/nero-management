@@ -18,7 +18,7 @@ defineProps({
                 <div class="flex justify-between">
                     <h2 class="text-xl text-transparent bg-red-gradient bg-clip-text font-bold">{{ search.reportTitle }}</h2>
                     <div class="h-auto flex">
-                        <span class="text-white h-full flex items-center bg-sapphire-gradient px-4 rounded-3xl text-sm">Responsável: {{ search.reportAuthor }}</span>
+                        <span class="text-white h-full flex items-center bg-sapphire-gradient px-4 rounded-3xl text-sm">Responsável: {{ search.responsible.name }}</span>
                     </div>
                 </div>
                 <p class="text-white mt-2 mb-4">
