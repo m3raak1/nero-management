@@ -121,7 +121,7 @@ const reportsByResearchId = computed(() => {
                     </p>
                 </div>
                 <!-- EXPERIMENTOS REALIZADOS -->
-                <div class="border-t border-indigoNavbarSt" v-if="experimentByResearchId.length > 0">
+                <div v-if="experimentByResearchId.length > 0" class="border-t border-indigoNavbarSt">
                     <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos
                         Realizados</h2>
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
