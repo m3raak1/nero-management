@@ -31,7 +31,7 @@
     }
 
     td,th {
-        @apply border border-borderColor py-2 px-4
+        @apply border border-borderColor py-2 px-4  
     }
 
     thead {

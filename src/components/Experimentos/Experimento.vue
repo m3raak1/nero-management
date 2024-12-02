@@ -16,12 +16,12 @@ defineProps({
         <div class="transition-all hover:scale-105 transform-gpu bg-indigoButtomColor p-6 rounded-2xl shadow-md border-borderColor border">
             <router-link :to="`pesquisas/${search.experimentId}`">
                 <div class="flex justify-between">
-                    <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold w-4/6">{{ search.experimentTitle }}</h2>
+                    <h2 class="text-xl text-transparent bg-red-gradient bg-clip-text font-bold w-4/6">{{ search.experimentTitle }}</h2>
                     <div class="flex">
                         <span class="text-white h-fit py-2 flex items-center bg-emerald-gradient px-4 ml-4 rounded-3xl text-sm">Status: {{ String(search.status).charAt(0).toUpperCase() + String(search.status).slice(1) }}</span>
                     </div>
                 </div>
-                <p class="text-white mt-2 mb-4">
+                <p class="text-white my-4">
                     {{ search.objective }}
                 </p>
                 <div class="flex justify-between text-white">

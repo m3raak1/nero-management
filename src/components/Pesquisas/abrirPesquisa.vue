@@ -42,6 +42,7 @@ onMounted(async () => {
     let resultsArray = []
 
     experimentJson.forEach(element => {
+        if (element.researchId !== researchId) return
         resultsArray = resultsArray.concat(element.results)
     });
 
@@ -62,6 +63,8 @@ const experimentByResearchId = computed(() => {
         experiment.researchId === researchId
     );
 });
+
+console.log(experimentByResearchId)
 const reportsByResearchId = computed(() => {
     return reportsCatalog.value.filter((report) =>
         report.researchId === researchId
@@ -115,27 +118,28 @@ const reportsByResearchId = computed(() => {
                         {{ researchById[0].summary }}
                     </p>
                 </div>
-                <div class="border-b-2 border-indigoNavbarSt">
+                <!-- EXPERIMENTOS REALIZADOS -->
+                <div class="border-b-2 border-indigoNavbarSt" v-if="experimentByResearchId.length > 0">
                     <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos
                         Realizados</h2>
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
-                        <!-- EXPERIMENTOS REALIZADOS -->
                         <Experimentos :experiments="experimentByResearchId" />
                     </div>
                 </div>
-                <div class="border-b-2 border-indigoNavbarSt">
+                <!-- RELATÓRIOS -->
+                <div v-if="reportsByResearchId.length > 0" class="border-b-2 border-indigoNavbarSt" >
                     <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Relatórios</h2>
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
-                        <!-- RELATÓRIOS -->
                         <Relatorios :reports="reportsByResearchId" />
                     </div>
                 </div>
-                <div class=" p-7 border-b-2 border-indigoNavbarSt">
-                    <!-- RESULTADOS QUANTITATIVOS -->
+                <!-- RESULTADOS QUANTITATIVOS -->
+                <div v-if="resultsCatalog.length > 0" class=" p-7 border-b-2 border-indigoNavbarSt">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Resultados Quantitativos</h2>
                     <QuantityTable :results="resultsCatalog"/>
                 </div>
-                <div class=" p-7">
+                <!-- CONCLUSÃO -->
+                <div v-if="researchById[0].conclusion" class=" p-7">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Considerações Finais</h2>
                     <p class="pb-5 pt-10 text-white">
                         {{ researchById[0].conclusion }}
