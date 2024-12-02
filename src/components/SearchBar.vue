@@ -53,6 +53,6 @@ const toggleOrder = (type) => {
                 </span>
             </div>
         </div>
-        <SearchBarFilter />
+        <SearchBarFilter/>
     </form>
 </template>

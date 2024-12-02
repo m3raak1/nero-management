@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, inject } from 'vue';
 import Svg from './Svg.vue';
 
 const dataFilter = ref({
@@ -21,8 +21,13 @@ const toggleFilter = () => {
     active.value = !active.value;
 };
 
-const addFilter = (event) => {
-    console.log(event.target.name, event.target.value)
+
+const sendFilter = inject("sendFilter")
+
+const sendData = (event) => {
+    if (sendFilter) {
+        sendFilter(event.target.name, event.target.value)
+    }
 }
 
 </script>
@@ -42,7 +47,7 @@ const addFilter = (event) => {
           <select
             name="team"
             class="outline-none bg-transparent border-borderColor border rounded-2xl py-1 px-2"
-            @change="addFilter"
+            @change="sendData"
           >
             <option value="" class="bg-indigoBackground">Desligado</option>
             <option v-for="(el, i) in dataFilter.teams" :value="el.id" class="bg-indigoBackground">{{ el.name }}</option>
@@ -53,7 +58,7 @@ const addFilter = (event) => {
           <select
             name="responsible"
             class="outline-none bg-transparent border-borderColor border rounded-2xl py-1 px-2"
-            @change="addFilter"
+            @change="sendData"
           >
             <option value="" class="bg-indigoBackground">Desligado</option>
             <option v-for="(el, i) in dataFilter.users" :value="el.id" class="bg-indigoBackground">{{ el.name }}</option>

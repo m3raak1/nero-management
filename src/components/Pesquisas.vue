@@ -1,7 +1,7 @@
 <script setup>
 import Pesquisa from '@/components/Pesquisa.vue';
 import SearchBar from '@/components/SearchBar.vue';
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, ref, computed, provide } from 'vue';
 
 const researchCatalog = ref([]);
 
@@ -11,10 +11,12 @@ onMounted(async () => {
 
   for (let element of data) {
     const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
-    element.responsible = await responsibleResponse.json();
+    const responsibleArray = await responsibleResponse.json();
+    element.responsible = responsibleArray[0]
 
     const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.team}`);
-    element.team = await teamResponse.json();
+    const teamArray = await teamResponse.json();
+    element.team = teamArray[0]
   }
 
   researchCatalog.value = data;
@@ -23,7 +25,10 @@ onMounted(async () => {
 
 const searchFilter = ref('');
 const filterOrder = ref('time-down');
-const filters = ref({});
+const filters = ref({
+    responsible: '',
+    team: ''
+});
 
 const sortResults = (catalog, type) => {
   const sortedCatalog = [...catalog]; 
@@ -50,9 +55,10 @@ const filteredResults = computed(() => {
     );
   }
 
+  console.log(results)
   results = results.filter(research => {
     return Object.entries(filters.value).every(([key, value]) =>
-      !value || (research[key] && research[key].toLowerCase() === value.toLowerCase())
+      !value || (research[key].name && research[key].name === value)
     );
   });
 
@@ -63,6 +69,13 @@ const handleSearch = (search) => {
   searchFilter.value = search.value;
   filterOrder.value = search.order.type + '-' + search.order.direction;
 };
+
+const handleFilter = (key, value) => {
+    filters.value[key] = value;
+    console.log(key, value, filters.value)
+}
+
+provide("sendFilter", handleFilter)
 </script>
 
 
@@ -76,7 +89,7 @@ const handleSearch = (search) => {
             <div class=" border rounded-3xl bg-indigoNavbarBg border-indigoNavbarSt">
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-4 p-12 rounded-lg">
                     <!-- Obtém valor digitado na SearchBar -->
-                    <SearchBar @search="handleSearch" />
+                    <SearchBar @search="handleSearch"/>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
                     <!-- Recebe valores do catálogo ou valores filtrados -->
