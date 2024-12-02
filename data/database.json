@@ -1,4 +1,68 @@
 {
+    "users": [
+        {
+            "userId": 0,
+            "name": "Dr. Caelion Vilares"
+        },
+        {
+            "userId": 1,
+            "name": "Ayla Nogueira"
+        },
+        {
+            "userId": 2,
+            "name": "Sérgio Velasco"
+        },
+        {
+            "userId": 3,
+            "name": "Lívia Estrela"
+        },
+        {
+            "userId": 4,
+            "name": "Dr. Mauro Zeferino"
+        },
+        {
+            "userId": 5,
+            "name": "Juliana Amaral"
+        },
+        {
+            "userId": 6,
+            "name": "Rafael Duarte"
+        },
+        {
+            "userId": 7,
+            "name": "Carla Menezes"
+        },
+        {
+            "userId": 8,
+            "name": "Vítor Costa"
+        },
+        {
+            "userId": 9,
+            "name": "Bianca Silva"
+        }
+    ],
+    "teams": [
+        {
+            "teamId": 0,
+            "name": "Alfa",
+            "membersId": [0, 2, 6]
+        },
+        {
+            "teamId": 1,
+            "name": "Beta",
+            "membersId": [1, 3, 7]
+        },
+        {
+            "teamId": 2,
+            "name": "Gama",
+            "membersId": [4, 8]
+        },
+        {
+            "teamId": 3,
+            "name": "Delta",
+            "membersId": [5, 9]
+        }
+    ],
     "researchCatalog": [
         {
             "researchId": 1,
@@ -194,5 +258,5 @@
             "reportConclusion": "Os testes de contenção revelaram que o Necroplasma não apenas corrompe a matéria, mas a reconfigura em padrões que desafiam a lógica física, como se rejeitasse as leis naturais. Durante os experimentos, sua resposta parecia quase consciente, emitindo pulsos que reagiam à proximidade dos pesquisadores. Essa substância transcende a compreensão material, funcionando como uma manifestação de forças desconhecidas e instáveis, tornando qualquer tentativa de confinamento tradicional inútil.",
             "reportReferences": []
         }
-    ]
+    ],
 }
