@@ -1,5 +1,5 @@
 <script setup>
-import Pesquisa from '@/components/Pesquisas/Pesquisa.vue';
+import Pesquisa from '@/components/Experimentos/Experimento.vue';
 import SearchBar from '@/components/SearchBar/SearchBar.vue';
 import { onMounted, ref, computed, provide } from 'vue';
 

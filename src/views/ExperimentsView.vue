@@ -1,7 +1,7 @@
 <script setup>
-import Pesquisas from '../components/Pesquisas/Pesquisas.vue';
+import Experimentos from '@/components/Experimentos/Experimentos.vue';
 </script>
 
 <template>
-    <Pesquisas />
+    <Experimentos />
 </template>
