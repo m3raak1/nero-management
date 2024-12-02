@@ -3,23 +3,29 @@ import Pesquisa from '@/components/Experimentos/Experimento.vue';
 import SearchBar from '@/components/SearchBar/SearchBar.vue';
 import { onMounted, ref, computed, provide } from 'vue';
 
-const researchCatalog = ref([]);
+const experimentCatalog = ref([]);
 
 onMounted(async () => {
-  const response = await fetch('http://localhost:3000/researchCatalog');
-  const data = await response.json();
+    const response = await fetch('http://localhost:3000/experimentsCatalog');
+    const data = await response.json();
 
-  for (let element of data) {
-    const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
-    const responsibleArray = await responsibleResponse.json();
-    element.responsible = responsibleArray[0]
+    for (let element of data) {
+        const researchResponse = await fetch(`http://localhost:3000/researchCatalog?researchId=${element.researchId}`);
+        const researchArray = await researchResponse.json();
+        element.research = researchArray[0]
 
-    const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.team}`);
-    const teamArray = await teamResponse.json();
-    element.team = teamArray[0]
-  }
+        const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
+        const responsibleArray = await responsibleResponse.json();
+        element.responsible = responsibleArray[0]
+    } 
 
-  researchCatalog.value = data;
+    for (let element of data) {
+        const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.research.team}`);
+        const teamArray = await teamResponse.json();
+        element.research.team = teamArray[0]
+    }
+
+    experimentCatalog.value = data;
 });
 
 const searchFilter = ref('');
@@ -33,30 +39,30 @@ const sortResults = (catalog, type) => {
   const sortedCatalog = [...catalog]; 
   switch (type) {
     case 'alphabet-down':
-      return sortedCatalog.sort((a, b) => a.title.localeCompare(b.title));
+      return sortedCatalog.sort((a, b) => a.experimentTitle.localeCompare(b.experimentTitle));
     case 'alphabet-up':
-      return sortedCatalog.sort((a, b) => b.title.localeCompare(a.title));
+      return sortedCatalog.sort((a, b) => b.experimentTitle.localeCompare(a.experimentTitle));
     case 'time-up':
-      return sortedCatalog.sort((a, b) => b.researchId - a.researchId);
+      return sortedCatalog.sort((a, b) => b.experimentId - a.experimentId);
     case 'time-down':
-      return sortedCatalog.sort((a, b) => a.researchId - b.researchId);
+      return sortedCatalog.sort((a, b) => a.experimentId - b.experimentId);
   }
 };
 
 const filteredResults = computed(() => {
-  let results = researchCatalog.value;
+  let results = experimentCatalog.value;
 
   if (searchFilter.value !== '') {
-    results = results.filter(research =>
-      research.title.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
-      research.summary.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
-      research.responsible.name.toLowerCase().includes(searchFilter.value.toLowerCase())
+    results = results.filter(experiment =>
+      experiment.experimentTitle.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
+      experiment.objective.toLowerCase().includes(searchFilter.value.toLowerCase()) ||
+      experiment.responsible.name.toLowerCase().includes(searchFilter.value.toLowerCase())
     );
   }
 
-  results = results.filter(research => {
+  results = results.filter(experiment => {
     return Object.entries(filters.value).every(([key, value]) =>
-      !value || (research[key].name && research[key].name === value)
+      !value || (experiment[key].name && experiment[key].name === value)
     );
   });
 

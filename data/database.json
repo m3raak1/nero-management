@@ -187,63 +187,283 @@
     ],
     "experimentsCatalog": [
         {
-            "experimentId":1,
+            "experimentId": 1,
             "researchId": 1,
-            "experimentTitle":"Fusão com Matéria Orgânica",
-            "responsible": "Dr. Toninho Ferreira",
-            "objective": "Teste das capacidades parasitárias e mutações.",
+            "experimentTitle": "Fusão com Matéria Orgânica",
+            "responsible": 0,
+            "objective": "Analisar a interação do Necroplasma com matéria orgânica humana, avaliando os efeitos de parasitação e mutação, e determinar os padrões de fusão e reações resultantes.",
             "startDate": "20/01/2024",
             "endDate": "20/07/2024",
             "status": "Concluído",
             "protocol": {
-                "materials":[],
-                "procedures":[],
-                "measurementsAndTools":[]
+                "materials": [
+                    "Amostra de Necroplasma (10ml)",
+                    "Tecido orgânico humano (amostra de pele e músculo)",
+                    "Câmara de contenção de energia reforçada (nível 5)",
+                    "Medidores de radiação espectral e potência energética",
+                    "Gravador audiovisual e registrador de dados automatizado"
+                ],
+                "procedures": [
+                    "Isolar a câmara de contenção com barreiras antimagnéticas ativas.",
+                    "Posicionar a amostra de tecido orgânico em um recipiente isolado e estéril dentro da câmara.",
+                    "Introduzir a amostra de Necroplasma no recipiente com o tecido orgânico usando equipamento de manipulação remota.",
+                    "Observar e registrar as reações visuais e comportamentais por um período inicial de 10 minutos.",
+                    "Utilizar medidores para coletar dados de alteração de massa, temperatura e emissão energética.",
+                    "Após a interação inicial, continuar a observação durante 24 horas para analisar mutações a longo prazo.",
+                    "Finalizar o experimento com a extração dos dados e descarte seguro dos resíduos gerados."
+                ],
+                "measurementsAndTools": [
+                    "Sensor de mutações moleculares",
+                    "Espectrômetro de energia",
+                    "Termômetros de alta precisão"
+                ]
             },
             "variables": {
-                "independent":[],
-                "dependents":[],
-                "controlled":[]
+                "independent": [
+                    "Volume de Necroplasma aplicado",
+                    "Tipo de tecido orgânico utilizado"
+                ],
+                "dependents": [
+                    "Grau de mutação do tecido orgânico",
+                    "Potência energética liberada pelo Necroplasma"
+                ],
+                "controlled": [
+                    "Temperatura e pressão da câmara de contenção",
+                    "Duração da exposição do Necroplasma ao tecido orgânico"
+                ]
             },
             "results": [
                 {
-                    "measurement":"",
-                    "value":0,
-                    "unit":""
+                    "measurement": "Grau de mutação",
+                    "value": 95,
+                    "unit": "%"
+                },
+                {
+                    "measurement": "Potência energética",
+                    "value": 8e8,
+                    "unit": "Joules"
+                },
+                {
+                    "measurement": "Taxa de absorção do tecido",
+                    "value": 75,
+                    "unit": "%"
                 }
             ],
-            "observations": [],
-            "conclusion":""
+            "observations": [
+                "O Necroplasma emitiu pulsos de luz estelar durante a interação com o tecido.",
+                "O tecido se transformou em uma estrutura híbrida com propriedades semilíquidas e cor esverdeada fosforescente.",
+                "A amostra parasitada exibia movimentos pulsantes independentes, acompanhados por sons metálicos de baixa frequência."
+            ],
+            "conclusion": "O experimento gerou dados valiosos para compreender a parasitação e a capacidade de alteração do Necroplasma em matéria orgânica, avançando a pesquisa para futuras contenções e análises."
         },
         {
-            "experimentId":2,
+            "experimentId": 2,
             "researchId": 1,
-            "experimentTitle":"Contenção e Análise de Propriedades",
-            "responsible": "Dra. Beatriz Calado",
-            "objective": "Estudo da interação com materiais inertes.",
-            "startDate": "20/01/2024",
-            "endDate": "",
-            "status": "Em Andamento",
+            "experimentTitle": "Análise da Influência do Necroplasma em Campos Eletromagnéticos",
+            "responsible": 3,
+            "objective": "Investigar os efeitos do Necroplasma sobre campos eletromagnéticos, analisando distorções, absorção de energia e geração de padrões caóticos.",
+            "startDate": "15/02/2024",
+            "endDate": "15/08/2024",
+            "status": "Em progresso",
             "protocol": {
-                "materials":[],
-                "procedures":[],
-                "measurementsAndTools":[]
+                "materials": [
+                    "Amostra de Necroplasma (15ml)",
+                    "Gerador de campos eletromagnéticos (faixa de 20 Hz a 2 GHz)",
+                    "Câmara de isolamento magnético",
+                    "Sensores de variação espectral",
+                    "Câmera termográfica e espectrômetro de luz"
+                ],
+                "procedures": [
+                    "Configurar o gerador de campos eletromagnéticos dentro da câmara de isolamento magnético.",
+                    "Colocar a amostra de Necroplasma em um suporte não condutivo dentro da câmara.",
+                    "Ativar o gerador e expor o Necroplasma a campos variáveis, aumentando gradualmente a frequência.",
+                    "Registrar padrões de luz, som e comportamento da amostra usando equipamentos de monitoramento.",
+                    "Utilizar sensores para medir distorções nos campos eletromagnéticos e absorção de energia pela amostra.",
+                    "Analisar os dados coletados para identificar possíveis interações entre o Necroplasma e os campos aplicados."
+                ],
+                "measurementsAndTools": [
+                    "Sensor de distorção eletromagnética",
+                    "Espectrômetro de luz de alta precisão",
+                    "Câmera termográfica de espectro completo"
+                ]
             },
             "variables": {
-                "independent":[],
-                "dependents":[],
-                "controlled":[]
+                "independent": [
+                    "Frequência do campo eletromagnético aplicado",
+                    "Intensidade do campo eletromagnético"
+                ],
+                "dependents": [
+                    "Distorção nos padrões eletromagnéticos",
+                    "Emissão de luz ou calor pelo Necroplasma"
+                ],
+                "controlled": [
+                    "Temperatura da câmara de isolamento",
+                    "Volume de Necroplasma utilizado"
+                ]
             },
             "results": [
                 {
-                    "measurement":"",
-                    "value":0,
-                    "unit":""
+                    "measurement": "Distorção do campo",
+                    "value": 12,
+                    "unit": "%"
+                },
+                {
+                    "measurement": "Emissão de luz",
+                    "value": 400,
+                    "unit": "lumens"
+                },
+                {
+                    "measurement": "Geração de calor",
+                    "value": 2.5,
+                    "unit": "°C"
                 }
             ],
-            "observations": [],
-            "conclusion":""
-        }           
+            "observations": [
+                "O Necroplasma mostrou comportamento errático em frequências próximas a 1 GHz, emitindo pulsos de luz ultravioleta.",
+                "Padrões caóticos foram registrados nos campos ao redor da amostra, sugerindo uma interação desconhecida.",
+                "Emissões de calor aumentaram progressivamente, acompanhadas de som de baixa frequência similar a um zumbido."
+            ],
+            "conclusion": "Os resultados sugerem que o Necroplasma tem propriedades únicas de interação com campos eletromagnéticos, possivelmente relacionadas à sua origem extradimensional. Mais experimentos são necessários para compreender a extensão dessas propriedades."
+        },
+        {
+            "experimentId": 3,
+            "researchId": 1,
+            "experimentTitle": "Estudo da Comunicação Vibracional do Necroplasma",
+            "responsible": 4,
+            "objective": "Explorar a hipótese de que o Necroplasma emite padrões vibracionais que podem ser interpretados como uma forma de comunicação.",
+            "startDate": "10/03/2024",
+            "endDate": "10/09/2024",
+            "status": "Em progresso",
+            "protocol": {
+                "materials": [
+                    "Amostra de Necroplasma (20ml)",
+                    "Sensores acústicos e vibracionais de alta sensibilidade",
+                    "Câmara de isolamento sônico",
+                    "Osciloscópio avançado",
+                    "Gravador de dados quânticos"
+                ],
+                "procedures": [
+                    "Colocar a amostra de Necroplasma na câmara de isolamento sônico.",
+                    "Ativar os sensores vibracionais e acústicos para detectar emissões espontâneas.",
+                    "Aplicar estímulos externos, como variações de luz e som, para avaliar possíveis respostas do Necroplasma.",
+                    "Registrar todos os padrões vibracionais emitidos pela amostra durante um período de 48 horas.",
+                    "Utilizar o osciloscópio para mapear as frequências emitidas em diferentes condições experimentais.",
+                    "Comparar os dados registrados para identificar padrões recorrentes ou similares a linguagens conhecidas."
+                ],
+                "measurementsAndTools": [
+                    "Osciloscópio digital",
+                    "Sensor de frequências acústicas (0-50 kHz)",
+                    "Gravador quântico de pulsos vibracionais"
+                ]
+            },
+            "variables": {
+                "independent": [
+                    "Intensidade de estímulos de luz aplicados",
+                    "Frequência dos estímulos sonoros utilizados"
+                ],
+                "dependents": [
+                    "Frequência e amplitude das vibrações emitidas pelo Necroplasma",
+                    "Duração das emissões vibracionais após estímulos"
+                ],
+                "controlled": [
+                    "Volume de Necroplasma analisado",
+                    "Ambiente acusticamente isolado"
+                ]
+            },
+            "results": [
+                {
+                    "measurement": "Amplitude das vibrações",
+                    "value": 1.2,
+                    "unit": "mm/s²"
+                },
+                {
+                    "measurement": "Frequência média das emissões",
+                    "value": 12.5,
+                    "unit": "kHz"
+                },
+                {
+                    "measurement": "Duração das respostas",
+                    "value": 3,
+                    "unit": "segundos"
+                }
+            ],
+            "observations": [
+                "O Necroplasma apresentou um padrão repetitivo de emissões vibracionais em intervalos regulares de 30 minutos.",
+                "Quando exposto a luz ultravioleta, a frequência das emissões aumentou significativamente.",
+                "Os padrões vibracionais não correspondem a nenhuma linguagem humana conhecida, mas têm similaridades com sinais binários complexos."
+            ],
+            "conclusion": "O experimento revelou que o Necroplasma emite vibrações que podem ser interpretadas como tentativas de comunicação. O padrão sugere um sistema altamente complexo e possivelmente alienígena. Estudos adicionais são necessários para decifrar o significado dessas emissões."
+        },
+        {
+            "experimentId": 4,
+            "researchId": 4,
+            "experimentTitle": "Interação com Campos Magnéticos Localizados",
+            "responsible": 5,
+            "objective": "Investigar as perturbações magnéticas causadas pela entidade K-14 e sua relação com os efeitos emocionais observados.",
+            "startDate": "15/06/2018",
+            "endDate": "15/12/2018",
+            "status": "Concluído",
+            "protocol": {
+                "materials": [
+                    "Detectores de campo magnético de alta precisão",
+                    "Geradores de campo magnético controlado",
+                    "Câmara de isolamento sensorial",
+                    "Sistemas de registro audiovisual",
+                    "Sensores biométricos para monitoramento emocional"
+                ],
+                "procedures": [
+                    "Preparar a câmara de isolamento sensorial e posicionar os detectores de campo magnético em torno do espaço designado.",
+                    "Instalar sensores biométricos em voluntários para monitorar variações emocionais durante a manifestação da entidade.",
+                    "Simular diferentes intensidades de campos magnéticos usando os geradores para atrair ou provocar a manifestação de K-14.",
+                    "Registrar todas as mudanças nos campos magnéticos e correlacioná-las com os estados emocionais reportados pelos voluntários.",
+                    "Analisar gravações audiovisuais para identificar qualquer indício visual ou auditivo associado à presença de K-14.",
+                    "Concluir o experimento com uma análise detalhada das perturbações magnéticas e efeitos emocionais registrados."
+                ],
+                "measurementsAndTools": [
+                    "Magnetômetros de alta sensibilidade",
+                    "Gravador audiovisual de espectro completo",
+                    "Sensores de frequência cardíaca e atividade cerebral"
+                ]
+            },
+            "variables": {
+                "independent": [
+                    "Intensidade dos campos magnéticos aplicados",
+                    "Posição dos voluntários dentro da câmara"
+                ],
+                "dependents": [
+                    "Nível de perturbação magnética registrada",
+                    "Alterações emocionais nos voluntários"
+                ],
+                "controlled": [
+                    "Ambiente isolado de influências externas",
+                    "Número de voluntários e suas condições emocionais iniciais"
+                ]
+            },
+            "results": [
+                {
+                    "measurement": "Perturbações magnéticas",
+                    "value": 150,
+                    "unit": "µT"
+                },
+                {
+                    "measurement": "Variações emocionais",
+                    "value": 80,
+                    "unit": "%"
+                },
+                {
+                    "measurement": "Presença de frequências inaudíveis",
+                    "value": 18,
+                    "unit": "kHz"
+                }
+            ],
+            "observations": [
+                "Voluntários relataram uma sensação de 'presença' intensa durante os picos de perturbação magnética.",
+                "O ambiente apresentou frequências sonoras fora do espectro auditivo humano durante as manifestações de K-14.",
+                "Alguns voluntários experimentaram estados de transe, enquanto outros relataram pânico ou euforia intensa."
+            ],
+            "conclusion": "A entidade K-14 demonstrou uma forte correlação com perturbações magnéticas localizadas e efeitos emocionais extremos. Os dados indicam que K-14 pode interagir com campos magnéticos, sugerindo um vínculo entre suas manifestações e alterações no ambiente físico e emocional."
+        }
+                        
     ],
     "reportsCatalog": [
         {
