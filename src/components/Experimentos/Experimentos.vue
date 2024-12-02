@@ -23,9 +23,11 @@ onMounted(async () => {
         const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.research.team}`);
         const teamArray = await teamResponse.json();
         element.research.team = teamArray[0]
+        element.team = element.research.team
     }
 
     experimentCatalog.value = data;
+    console.log(experimentCatalog.value);
 });
 
 const searchFilter = ref('');
