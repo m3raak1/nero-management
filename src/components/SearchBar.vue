@@ -6,8 +6,11 @@ import Svg from './Svg.vue';
 
 const emit = defineEmits(['search'])
 const search = (e) => {
-    console.log(e.target.value);
-    emit('search', e.target.value)
+    console.log(Object.entries(computers.value).filter(([key, value]) => value[0] === true)[0]);
+    emit('search', {
+        value: e.target.value,
+        computer: `${Object.entries(computers.value).filter(([key, value]) => value[0] === true).map(([key]) => key)}`
+    })
 };
 
 const computers = ref({
