@@ -35,7 +35,7 @@ const sortResults = (catalog, type) => {
 //Obtém valor digitado na search bar
 const searchFilter = ref('')
 const handleSearch = (search) => {
-    searchFilter.value = search;
+    searchFilter.value = search.value;
 };
 </script>
 
