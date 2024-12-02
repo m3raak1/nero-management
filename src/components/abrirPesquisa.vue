@@ -3,6 +3,7 @@ import Svg from './Svg.vue';
 import { useRoute } from 'vue-router';
 import { onMounted, ref, computed } from 'vue';
 import Experimentos from './Experimentos.vue';
+import Relatorios from './Relatorios.vue';
 //Obtém o id desejado
 const route = useRoute();
 const researchId = Number(route.params.id);
@@ -10,11 +11,14 @@ console.log(researchId);
 //Obtém resposta de JSON Server
 const researchCatalog = ref([]);
 const experimentsCatalog = ref([]);
+const reportsCatalog = ref([]);
 onMounted(async () => {
     const response = await fetch('http://localhost:3000/researchCatalog')
     researchCatalog.value = await response.json();
     const response2 = await fetch('http://localhost:3000/experimentsCatalog')
     experimentsCatalog.value = await response2.json();
+    const response3 = await fetch('http://localhost:3000/reportsCatalog')
+    reportsCatalog.value = await response3.json();
 })
 //Obtém elemento desejado
 const researchById = computed(() => {
@@ -25,6 +29,11 @@ const researchById = computed(() => {
 const experimentByResearchId = computed(() => {
     return experimentsCatalog.value.filter((experiment) =>
         experiment.researchId === researchId
+    );
+});
+const reportsByResearchId = computed(() => {
+    return reportsCatalog.value.filter((report) =>
+        report.researchId === researchId
     );
 });
 </script>
@@ -76,20 +85,30 @@ const experimentByResearchId = computed(() => {
                     </p>
                 </div>
                 <div class="border-b-2 border-indigoNavbarSt">
-                    <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos Realizados</h2>
+                    <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos
+                        Realizados</h2>
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
                         <!-- EXPERIMENTOS REALIZADOS -->
                         <Experimentos :experiments="experimentByResearchId" />
                     </div>
                 </div>
-                <div class=" min-h-64 border-b-2 border-indigoNavbarSt">
-
+                <div class="border-b-2 border-indigoNavbarSt">
+                    <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Relatórios</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
+                        <!-- RELATÓRIOS -->
+                        <Relatorios :reports="reportsByResearchId" />
+                    </div>
                 </div>
-                <div class=" min-h-64 border-b-2 border-indigoNavbarSt">
-
+                <div class=" p-7 border-b-2 border-indigoNavbarSt">
+                    <!-- RESULTADOS QUANTITATIVOS -->
+                    <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Resultados Quantitativos</h2>
+                    
                 </div>
-                <div class=" min-h-64 border-indigoNavbarSt">
-
+                <div class=" p-7">
+                    <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Considerações Finais</h2>
+                    <p class="pb-5 pt-10 text-white">
+                        {{ researchById[0].conclusion }}
+                    </p>
                 </div>
             </div>
         </section>

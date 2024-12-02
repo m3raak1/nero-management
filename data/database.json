@@ -9,7 +9,8 @@
             "team": 42,
             "startDate": "06/06/2006",
             "endDate": "null",
-            "status": "ativo"
+            "status": "ativo",
+            "conclusion": "O Necroplasma transcende a vida como entendemos e desafia a percepção de matéria, energia e consciência. Suas ações parecem sem propósito, mas sua presença evoca uma sensação perturbadora de que existe um 'querer' que foge de nosso entendimento. Todas as tentativas de mapeamento falharam."
         },
         {
             "researchId": 2,
@@ -20,7 +21,8 @@
             "team": 42,
             "startDate": "12/12/2012",
             "endDate": "null",
-            "status": "ativo"
+            "status": "ativo",
+            "conclusion": ""
         },
         {
             "researchId": 3,
@@ -31,7 +33,8 @@
             "team": 42,
             "startDate": "01/01/2020",
             "endDate": "null",
-            "status": "ativo"
+            "status": "ativo",
+            "conclusion": ""
         },
         {
             "researchId": 4,
@@ -42,7 +45,8 @@
             "team": 42,
             "startDate": "10/10/2010",
             "endDate": "null",
-            "status": "ativo"
+            "status": "ativo",
+            "conclusion": ""
         },
         {
             "researchId": 5,
@@ -53,7 +57,8 @@
             "team": 42,
             "startDate": "05/05/2015",
             "endDate": "null",
-            "status": "ativo"
+            "status": "ativo",
+            "conclusion": ""
         },
         {
             "researchId": 6,
@@ -64,7 +69,8 @@
             "team": 42,
             "startDate": "07/07/2007",
             "endDate": "null",
-            "status": "ativo"
+            "status": "ativo",
+            "conclusion": ""
         },
         {
             "researchId": 7,
@@ -75,7 +81,8 @@
             "team": 42,
             "startDate": "02/02/2012",
             "endDate": "null",
-            "status": "ativo"
+            "status": "ativo",
+            "conclusion": ""
         },
         {
             "researchId": 8,
@@ -86,7 +93,8 @@
             "team": 42,
             "startDate": "08/08/2018",
             "endDate": "null",
-            "status": "ativo"
+            "status": "ativo",
+            "conclusion": ""
         },
         {
             "researchId": 9,
@@ -97,7 +105,8 @@
             "team": 42,
             "startDate": "03/03/2003",
             "endDate": "null",
-            "status": "ativo"
+            "status": "ativo",
+            "conclusion": ""
         }
     ],
     "experimentsCatalog": [
@@ -129,21 +138,60 @@
             ],
             "observations": [],
             "conclusion":""
-        }
+        },
+        {
+            "experimentId":2,
+            "researchId": 1,
+            "experimentTitle":"Contenção e Análise de Propriedades",
+            "responsible": "Dra. Beatriz Calado",
+            "objective": "Estudo da interação com materiais inertes.",
+            "startDate": "20/01/2024",
+            "endDate": "",
+            "status": "Em Andamento",
+            "protocol": {
+                "materials":[],
+                "procedures":[],
+                "measurementsAndTools":[]
+            },
+            "variables": {
+                "independent":[],
+                "dependents":[],
+                "controlled":[]
+            },
+            "results": [
+                {
+                    "measurement":"",
+                    "value":0,
+                    "unit":""
+                }
+            ],
+            "observations": [],
+            "conclusion":""
+        }           
     ],
-    "reports": [
+    "reportsCatalog": [
         {
             "reportId":1,
             "researchId":1,
             "experimentId":1,
+            "reportDate": "20/01/2024",
             "reportTitle": "Fusão com Matéria Orgânica",
             "reportAuthor": "Dr. Toninho Ferreira",
-            "reportObjective": "",
-            "reportSummary": "",
-            "reportProtocol": "",
             "reportResults": "",
             "reportDiscussion": "",
-            "reportConclusion": "",
+            "reportConclusion": "O Necroplasma reagiu de maneira agressiva ao tecido orgânico humano. A fusão foi irreversível, criando mutações imprevisíveis e deformadas. Observou-se que o tecido parasitado perdeu completamente sua cognição e funcionalidade original, funcionando apenas como veículo para o organismo.",
+            "reportReferences": []
+        },
+        {
+            "reportId":2,
+            "researchId":1,
+            "experimentId":2,
+            "reportDate": "20/07/2024",
+            "reportTitle": "Contenção e Análise",
+            "reportAuthor": "Dra. Maria Albuquerque",
+            "reportResults": "",
+            "reportDiscussion": "",
+            "reportConclusion": "Os testes de contenção revelaram que o Necroplasma não apenas corrompe a matéria, mas a reconfigura em padrões que desafiam a lógica física, como se rejeitasse as leis naturais. Durante os experimentos, sua resposta parecia quase consciente, emitindo pulsos que reagiam à proximidade dos pesquisadores. Essa substância transcende a compreensão material, funcionando como uma manifestação de forças desconhecidas e instáveis, tornando qualquer tentativa de confinamento tradicional inútil.",
             "reportReferences": []
         }
     ]
