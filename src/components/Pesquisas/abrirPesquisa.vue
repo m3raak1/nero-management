@@ -79,8 +79,9 @@ const reportsByResearchId = computed(() => {
         </section>
         <section class="py-8 px-12">
             <div v-if="researchById.length > 0"
-                class=" min-h-screen border rounded-3xl bg-indigoNavbarBg border-indigoNavbarSt">
-                <div class=" p-7  border-b-2 border-indigoNavbarSt">
+                class="  border rounded-3xl bg-indigoNavbarBg border-indigoNavbarSt">
+                <!-- Titulo/Primeira Sessão -->
+                <div class=" p-7">
                     <div class="flex justify-between">
                         <h2 class="text-3xl text-transparent bg-red-gradient bg-clip-text font-bold">{{
                             researchById[0].title }}</h2>
@@ -112,14 +113,15 @@ const reportsByResearchId = computed(() => {
                         </div>
                     </div>
                 </div>
-                <div class=" p-7 border-b-2 border-indigoNavbarSt">
+                <!-- Resumo/Segunda Sessão -->
+                <div class=" p-7 border-t border-indigoNavbarSt">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Introdução</h2>
                     <p class="pb-5 pt-10 text-white">
                         {{ researchById[0].summary }}
                     </p>
                 </div>
                 <!-- EXPERIMENTOS REALIZADOS -->
-                <div class="border-b-2 border-indigoNavbarSt" v-if="experimentByResearchId.length > 0">
+                <div class="border-t border-indigoNavbarSt" v-if="experimentByResearchId.length > 0">
                     <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos
                         Realizados</h2>
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
@@ -127,19 +129,19 @@ const reportsByResearchId = computed(() => {
                     </div>
                 </div>
                 <!-- RELATÓRIOS -->
-                <div v-if="reportsByResearchId.length > 0" class="border-b-2 border-indigoNavbarSt" >
+                <div v-if="reportsByResearchId.length > 0" class="border-t border-indigoNavbarSt" >
                     <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Relatórios</h2>
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
                         <Relatorios :reports="reportsByResearchId" />
                     </div>
                 </div>
                 <!-- RESULTADOS QUANTITATIVOS -->
-                <div v-if="resultsCatalog.length > 0" class=" p-7 border-b-2 border-indigoNavbarSt">
+                <div v-if="resultsCatalog.length > 0" class=" p-7 border-t border-indigoNavbarSt">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Resultados Quantitativos</h2>
                     <QuantityTable :results="resultsCatalog"/>
                 </div>
                 <!-- CONCLUSÃO -->
-                <div v-if="researchById[0].conclusion" class=" p-7">
+                <div v-if="researchById[0].conclusion" class=" p-7 border-t border-indigoNavbarSt">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Considerações Finais</h2>
                     <p class="pb-5 pt-10 text-white">
                         {{ researchById[0].conclusion }}
