@@ -60,11 +60,17 @@ const researchById = computed(() => {
                         </div>
                     </div>
                 </div>
-                <div class=" min-h-64 border-b-2 border-indigoNavbarSt">
-
+                <div class=" p-7 border-b-2 border-indigoNavbarSt">
+                    <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Introdução</h2>
+                    <p class="pb-5 pt-10 text-white">
+                        {{ researchById[0].summary }}
+                    </p>
                 </div>
-                <div class=" min-h-64 border-b-2 border-indigoNavbarSt">
-
+                <div class=" p-7 border-b-2 border-indigoNavbarSt">
+                    <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos Realizados</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
+                    <!-- EXPERIMENTOS REALIZADOS -->
+                    </div>
                 </div>
                 <div class=" min-h-64 border-b-2 border-indigoNavbarSt">
 
