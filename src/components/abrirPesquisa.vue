@@ -27,7 +27,7 @@ const researchById = computed(() => {
         <section class="py-8 px-12">
             <div class=" min-h-screen border rounded-3xl bg-indigoNavbarBg border-indigoNavbarSt">
                 <div class=" p-7 min-h-64 border-b-2 border-indigoNavbarSt">
-                    <div class="flex justify-between">
+                    <div v-if="researchById.length > 0" class="flex justify-between">
                         <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">{{
                             researchById[0].title }}</h2>
                         <div class="h-auto flex">
