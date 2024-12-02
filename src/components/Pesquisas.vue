@@ -18,7 +18,6 @@ const filteredResults = computed(() => {
     }
     return sortResults(researchCatalog.value, 'time-new');
 })
-
 const sortResults = (catalog, type) => {
     switch (type) {
         case 'alphabet-down': 
