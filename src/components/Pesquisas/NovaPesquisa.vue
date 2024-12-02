@@ -16,6 +16,20 @@ onMounted(async () => {
   usersCatalog.value = usersData;
 });
 
+const inputData = ref({
+    title: '',
+    team: '',
+    startDate: Date,
+    responsible: '',
+    objective: '',
+    summaryTitle: '',
+    summary: ''
+})
+
+const submitResearch = (e) => {
+    console.log(inputData.value)
+}
+
 </script>
 
 <template>
@@ -28,37 +42,38 @@ onMounted(async () => {
                 <div class=" p-7">
                     <div class="w-full flex justify-between items-center gap-10">
                         <!-- Titulo da Pesquisa-->
-                        <input class="text-xl py-2 px-2 border-b border-borderColor" type="text" placeholder="Inserir Titulo">
+                        <input v-model="inputData.title" class="text-xl py-2 px-2 border-b border-borderColor w-2/5" type="text" placeholder="Inserir Titulo">
                         <div class="flex gap-10">
                             <!-- Equipe -->
                             <div class="flex items-center gap-2">
                                 <label>Equipe</label>
-                                <select class="px-4 py-1 bg-metal-gradient rounded-3xl">
+                                <select v-model="inputData.team" class="px-4 py-1 bg-metal-gradient rounded-3xl">
                                     <option class="bg-indigoNavbarBg" v-for="(team, i) in teamsCatalog" :key="i" :value="team.name">{{ team.name }}</option>
                                 </select>
                             </div>
                             <!-- Data -->
                             <div class="flex items-center gap-2">
                                 <label>Data de Inicio</label>
-                                <input class="bg-ruby-gradient rounded-2xl px-4 py-1" type="date">
+                                <input v-model="inputData.startDate" class="bg-ruby-gradient rounded-2xl px-4 py-1" type="date">
                             </div>
                         </div>
                     </div>
                     <!-- Responsavel-->
                     <div class="my-6">
-                        <input class="text-lg py-2 px-2 border-b border-borderColor" list="users" placeholder="Responsavel">
+                        <input v-model="inputData.responsible" class="text-lg py-2 px-2 border-b border-borderColor" list="users" placeholder="Responsavel">
                         <datalist id="users" placeholder="Responsavel">
                             <option v-for="(user, i) in usersCatalog" :key="i" :value="user.name"></option>
                         </datalist>
                     </div>
                     <!-- Objetivo -->
-                    <textarea class="w-full bg-indigoBackground rounded-2xl p-4" rows="5" placeholder="Objetivo da Pesquisa"></textarea>
+                    <textarea v-model="inputData.objective" class="w-full bg-indigoBackground rounded-2xl p-4" rows="5" placeholder="Objetivo da Pesquisa"></textarea>
                     <!-- Titulo Resumo -->
-                    <input class="text-xl py-2 px-2 my-6 w-2/5 border-b border-borderColor" type="text" placeholder="Inserir Titulo do Resumo">
-                    <textarea class="w-full bg-indigoBackground rounded-2xl p-4" rows="5" placeholder="Resumo da Pesquisa"></textarea>
+                    <input v-model="inputData.summaryTitle" class="text-xl py-2 px-2 my-6 w-2/5 border-b border-borderColor" type="text" placeholder="Inserir Titulo do Resumo">
+                    <!-- Resumo -->
+                    <textarea v-model="inputData.summary" class="w-full bg-indigoBackground rounded-2xl p-4" rows="5" placeholder="Resumo da Pesquisa"></textarea>
                 </div>
             </div>
-            <button class=" bg-indigoNavbarBg border border-borderColor rounded-2xl py-2 px-4 font-semibold my-4">
+            <button @click="submitResearch" class=" bg-indigoNavbarBg border border-borderColor rounded-2xl py-2 px-4 font-semibold my-4">
                 <span class="text-transparent  bg-emerald-gradient bg-clip-text">Salvar</span>
             </button>
         </section>
