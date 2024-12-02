@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router';
 import { onMounted, ref, computed } from 'vue';
 import Experimentos from '../Pesquisas/Experimentos.vue';
 import Relatorios from '../Pesquisas/Relatorios.vue';
+import QuantityTable from '../QuantityTable.vue';
 //Obtém o id desejado
 const route = useRoute();
 const researchId = Number(route.params.id);
@@ -11,6 +12,7 @@ console.log(researchId);
 //Obtém resposta de JSON Server
 const researchCatalog = ref([]);
 const experimentsCatalog = ref([]);
+const resultsCatalog = ref([])
 const reportsCatalog = ref([]);
 onMounted(async () => {
     const response = await fetch('http://localhost:3000/researchCatalog')
@@ -37,6 +39,13 @@ onMounted(async () => {
         element.responsible = responsibleArray[0]
     } 
 
+    let resultsArray = []
+
+    experimentJson.forEach(element => {
+        resultsArray = resultsArray.concat(element.results)
+    });
+
+    resultsCatalog.value = resultsArray;
     experimentsCatalog.value = experimentJson;
 
     const response3 = await fetch('http://localhost:3000/reportsCatalog')
@@ -124,7 +133,7 @@ const reportsByResearchId = computed(() => {
                 <div class=" p-7 border-b-2 border-indigoNavbarSt">
                     <!-- RESULTADOS QUANTITATIVOS -->
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Resultados Quantitativos</h2>
-                    
+                    <QuantityTable :results="resultsCatalog"/>
                 </div>
                 <div class=" p-7">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Considerações Finais</h2>
@@ -136,3 +145,7 @@ const reportsByResearchId = computed(() => {
         </section>
     </div>
 </template>
+
+<style>
+
+</style>
