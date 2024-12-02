@@ -1,6 +1,19 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import Svg from './Svg.vue';
+
+const dataFilter = ref({
+    users: [],
+    teams: [],
+});
+onMounted(async () => {
+  const usersResponse = await fetch('http://localhost:3000/users');
+  dataFilter.value.users = await usersResponse.json()
+  
+  const teamsResponse = await fetch('http://localhost:3000/teams');
+  dataFilter.value.teams = await teamsResponse.json();
+
+});
 
 const active = ref(false);
 
@@ -32,9 +45,7 @@ const addFilter = (event) => {
             @change="addFilter"
           >
             <option value="" class="bg-indigoBackground">Desligado</option>
-            <option value="42" class="bg-indigoBackground">Alfa</option>
-            <option value="43" class="bg-indigoBackground">Vita</option>
-            <option value="44" class="bg-indigoBackground">Gama</option>
+            <option v-for="(el, i) in dataFilter.teams" :value="el.id" class="bg-indigoBackground">{{ el.name }}</option>
           </select>
         </div>
         <div>
@@ -45,9 +56,7 @@ const addFilter = (event) => {
             @change="addFilter"
           >
             <option value="" class="bg-indigoBackground">Desligado</option>
-            <option value="1" class="bg-indigoBackground">Dr. Toninho Ferreira</option>
-            <option value="2" class="bg-indigoBackground">Dr. Guilherme Magarão</option>
-            <option value="3" class="bg-indigoBackground">Dra. Beatriz Calado</option>
+            <option v-for="(el, i) in dataFilter.users" :value="el.id" class="bg-indigoBackground">{{ el.name }}</option>
           </select>
         </div>
       </div>
