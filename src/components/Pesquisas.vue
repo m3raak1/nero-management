@@ -4,9 +4,21 @@ import SearchBar from '@/components/SearchBar.vue';
 import { onMounted, ref, computed } from 'vue';
 
 const researchCatalog = ref([]);
+
 onMounted(async () => {
   const response = await fetch('http://localhost:3000/researchCatalog');
-  researchCatalog.value = await response.json();
+  const data = await response.json();
+
+  for (let element of data) {
+    const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
+    element.responsible = await responsibleResponse.json();
+
+    const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.team}`);
+    element.team = await teamResponse.json();
+  }
+
+  researchCatalog.value = data;
+  console.log(data[0].responsible[0]);
 });
 
 const searchFilter = ref('');
