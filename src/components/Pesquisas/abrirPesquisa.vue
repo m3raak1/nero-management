@@ -2,8 +2,8 @@
 import Svg from '../Svg.vue';
 import { useRoute } from 'vue-router';
 import { onMounted, ref, computed } from 'vue';
-import Experimentos from '../Experimentos/Experimentos.vue';
-import Relatorios from '../Relatorios.vue';
+import Experimentos from '../Pesquisas/Experimentos.vue';
+import Relatorios from '../Pesquisas/Relatorios.vue';
 //Obtém o id desejado
 const route = useRoute();
 const researchId = Number(route.params.id);

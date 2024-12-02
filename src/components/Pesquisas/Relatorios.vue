@@ -1,5 +1,5 @@
 <script setup>
-import Svg from './Svg.vue';
+import Svg from '../Svg.vue';
 
 
 defineProps({
