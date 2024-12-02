@@ -11,6 +11,7 @@ onMounted(async () => {
 
 const searchFilter = ref('');
 const filterOrder = ref('time-down');
+const filters = ref({});
 
 const sortResults = (catalog, type) => {
   const sortedCatalog = [...catalog]; 
@@ -19,9 +20,9 @@ const sortResults = (catalog, type) => {
       return sortedCatalog.sort((a, b) => a.title.localeCompare(b.title));
     case 'alphabet-up':
       return sortedCatalog.sort((a, b) => b.title.localeCompare(a.title));
-    case 'time-down':
-      return sortedCatalog.sort((a, b) => b.researchId - a.researchId);
     case 'time-up':
+      return sortedCatalog.sort((a, b) => b.researchId - a.researchId);
+    case 'time-down':
       return sortedCatalog.sort((a, b) => a.researchId - b.researchId);
   }
 };
@@ -36,6 +37,12 @@ const filteredResults = computed(() => {
       research.responsible.toLowerCase().includes(searchFilter.value.toLowerCase())
     );
   }
+
+  results = results.filter(research => {
+    return Object.entries(filters.value).every(([key, value]) =>
+      !value || (research[key] && research[key].toLowerCase() === value.toLowerCase())
+    );
+  });
 
   return sortResults(results, filterOrder.value);
 });

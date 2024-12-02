@@ -22,7 +22,10 @@ const inputSearch = ref('')
 const toggleOrder = (type) => {
     order.value = {
         type: type,
-        direction: order.value.direction === 'up' ? "down" : "up"
+        direction: order.value.direction === 'up' ? "down" : "up",
+        filters: {
+
+        }
     }
     search({
         target: {
@@ -30,7 +33,6 @@ const toggleOrder = (type) => {
         }
     })
 }
-
 
 </script>
 
