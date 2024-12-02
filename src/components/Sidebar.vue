@@ -16,9 +16,9 @@ defineProps({
     <section class="w-64 bg-indigoNavbarBg border-r border-indigoNavbarSt">
         <div class="py-4 px-6">
             <!-- User Profile -->
-            <a class="flex justify-center pt-8" href="/index.html">
+            <router-link class="flex justify-center pt-8" to="/index">
                 <img class=" h-15 w-auto" v-bind:src="userpic" alt="User Picture" />
-            </a>
+            </router-link>
             <!-- User Name -->
             <p class="flex justify-center pt-4 text-white text-2xl font-sans">
                 {{ username }}
@@ -26,30 +26,30 @@ defineProps({
         </div>
 
         <div class=" place-self-end ">
-            <a class="" href="/pesquisas.html">
+            <router-link class="" to="/pesquisas">
                 <Svg name="Pesquisas" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
-            </a>
+            </router-link>
         </div>
         <div class=" place-self-end">
-            <a class="" href="/experimentos.html">
+            <router-link class="" to="/experimentos">
                 <Svg name="Experimentos" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
-            </a>
+            </router-link>
         </div>
         <div class=" place-self-end ">
-            <a class="" href="/relatorios.html">
+            <router-link class="" to="/relatorios">
                 <Svg name="Relatórios" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
-            </a>
+            </router-link>
         </div>
         <div class=" place-self-end ">
-            <a class="" href="/equipes.html">
+            <router-link class="" to="/equipes">
                 <Svg name="Equipes" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton fill-black" />
-            </a>
+            </router-link>
         </div>
         <div class=" absolute bottom-8 left-20 drop-shadow-md hover:drop-shadow-3xl rounded-full ">
-            <a class="flex justify-center text-white font-sans " href="/logout.html">
+            <router-link class="flex justify-center text-white font-sans " to="/logout">
                 <img v-bind:src="sair">
                 <span class="pl-3">Logout</span>  
-            </a>
+            </router-link>
         </div>
     </section>
 </template>

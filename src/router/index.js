@@ -12,12 +12,12 @@ const router = createRouter({
             component: HomeView
         },
         {
-            path: '/pesquisas.html',
+            path: '/pesquisas',
             name: 'pesquisas',
             component: PesquisasView
         },
         {
-            path: '/pesquisas/:id.html',
+            path: '/pesquisas/:id',
             name: 'abrirpesquisa',
             component: AbrirPesquisaView
         }
