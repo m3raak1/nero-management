@@ -17,7 +17,7 @@ defineProps({
                         <span class="text-white h-fit py-2 flex items-center bg-emerald-gradient px-4 ml-4 rounded-3xl text-sm">Status: {{ String(search.status).charAt(0).toUpperCase() + String(search.status).slice(1) }}</span>
                     </div>
                 </div>
-                <p class="text-white mt-2 mb-4">
+                <p class="text-white my-6">
                     {{ search.objective }}
                 </p>
                 <div class="flex justify-between text-white">
@@ -26,7 +26,7 @@ defineProps({
                     <div class="flex items-center gap-2">
                         <p>Data de inicio </p>
                         <span class="text-white flex items-center justify-between bg-ruby-gradient py-2 px-4 rounded-3xl text-sm"><p class="my-auto">{{ search.startDate }}</p> <Svg name="date" class="ml-2 -mt-1"/></span>
-                        <p>Data de Termino </p>
+                        <p>{{ search.status === "Em progresso" ? "Prazo" : "Data de Termino" }}</p>
                         <span class="text-white flex items-center justify-between bg-ruby-gradient py-2 px-4 rounded-3xl text-sm"><p class="my-auto">{{ search.endDate }}</p> <Svg name="date" class="ml-2 -mt-1"/></span>
                     </div>
                 </div>
