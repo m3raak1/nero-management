@@ -2,15 +2,19 @@
 import Svg from './Svg.vue';
 import { useRoute } from 'vue-router';
 import { onMounted, ref, computed } from 'vue';
+import Experimentos from './Experimentos.vue';
 //Obtém o id desejado
 const route = useRoute();
 const researchId = Number(route.params.id);
 console.log(researchId);
 //Obtém resposta de JSON Server
 const researchCatalog = ref([]);
+const experimentsCatalog = ref([]);
 onMounted(async () => {
     const response = await fetch('http://localhost:3000/researchCatalog')
     researchCatalog.value = await response.json();
+    const response2 = await fetch('http://localhost:3000/experimentsCatalog')
+    experimentsCatalog.value = await response2.json();
 })
 //Obtém elemento desejado
 const researchById = computed(() => {
@@ -66,10 +70,11 @@ const researchById = computed(() => {
                         {{ researchById[0].summary }}
                     </p>
                 </div>
-                <div class=" p-7 border-b-2 border-indigoNavbarSt">
-                    <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos Realizados</h2>
+                <div class="border-b-2 border-indigoNavbarSt">
+                    <h2 class="p-7 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Experimentos Realizados</h2>
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
-                    <!-- EXPERIMENTOS REALIZADOS -->
+                        <!-- EXPERIMENTOS REALIZADOS -->
+                        <Experimentos :experiments="experimentsCatalog" />
                     </div>
                 </div>
                 <div class=" min-h-64 border-b-2 border-indigoNavbarSt">
