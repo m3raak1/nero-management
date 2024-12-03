@@ -10,7 +10,7 @@ defineProps({
 <template>
     <div v-for="search in experiments" :key="search.experimentId">
         <div class="transition-all hover:scale-105 transform-gpu bg-indigoButtomColor p-6 rounded-2xl shadow-md border-borderColor border">
-            <router-link :to="`pesquisas/${search.experimentId}`">
+            <!router-link :to="`pesquisas/${search.experimentId}`">
                 <div class="flex justify-between">
                     <h2 class="text-2xl text-transparent bg-silver-gradient bg-clip-text font-bold w-4/6">{{ search.experimentTitle }}</h2>
                     <div class="flex">
@@ -30,7 +30,7 @@ defineProps({
                         <span class="text-white flex items-center justify-between bg-ruby-gradient py-2 px-4 rounded-3xl text-sm"><p class="my-auto">{{ search.endDate }}</p> <Svg name="date" class="ml-2 -mt-1"/></span>
                     </div>
                 </div>
-            </router-link>
+            <!/router-link>
         </div>
     </div>
 </template>

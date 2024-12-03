@@ -14,7 +14,7 @@ defineProps({
 <template>
     <div v-for="search in reports" :key="search.reportId">
         <div class="transition-all hover:scale-105 transform-gpu bg-indigoButtomColor p-6 rounded-2xl shadow-md border-borderColor border">
-            <a :href="`experimento/${search.reportId}.html`">
+            <a :href="`/relatorios/${search.reportId}`">
                 <div class="flex justify-between">
                     <h2 class="text-2xl text-transparent bg-silver-gradient bg-clip-text font-bold">{{ search.reportTitle }}</h2>
                     <div class="h-auto flex">
