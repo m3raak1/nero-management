@@ -33,7 +33,7 @@ const reportById = computed(() => {
 <template>
     <div class="flex-1 h-screen overflow-y-scroll scroll-m-1">
         <section class="px-12 pt-12 text-4xl font-sans">
-            <span class="text-transparent bg-silver-gradient bg-clip-text">Pesquisas</span>
+            <span class="text-transparent bg-silver-gradient bg-clip-text">Relatórios</span>
         </section>
         <section class="py-8 px-12">
             <div v-if="reportById.length > 0" class="  border rounded-3xl bg-indigoNavbarBg border-indigoNavbarSt">
@@ -54,25 +54,44 @@ const reportById = computed(() => {
                         </div>
                     </div>
                     <h2 class=" pt-2 text-xl text-transparent bg-light-red-gradient bg-clip-text font-bold">{{
-                            reportById[0].reportSubtitle }}</h2>
-                    <p class="pt-10 text-white">
+                        reportById[0].reportSubtitle }}</h2>
+                    <p class="pt-7 text-white">
                         {{ reportById[0].reportGoal }}
                     </p>
                 </div>
                 <!-- Resumo/Segunda Sessão -->
                 <div class=" p-7 border-t border-indigoNavbarSt">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Introdução</h2>
-                    <p class="pb-5 pt-10 text-white">
+                    <p class="pb-5 pt-5 text-white">
                         {{ reportById[0].reportIntroduction }}
+                    </p>
+                </div>
+                <!-- DISCUSSÃO -->
+                <div v-if="reportById[0].reportConclusion" class=" p-7 border-t border-indigoNavbarSt">
+                    <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Discussão
+                    </h2>
+                    <p class="pb-5 pt-5 text-white">
+                        {{ reportById[0].reportDiscussion }}
                     </p>
                 </div>
                 <!-- CONCLUSÃO -->
                 <div v-if="reportById[0].reportConclusion" class=" p-7 border-t border-indigoNavbarSt">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Conclusão
                     </h2>
-                    <p class="pb-5 pt-10 text-white">
+                    <p class="pb-5 pt-5 text-white">
                         {{ reportById[0].reportConclusion }}
                     </p>
+                </div>
+                <!-- REFERÊNCIAS -->
+                <div v-if="reportById[0].reportReferences" class=" p-7 border-t border-indigoNavbarSt">
+                    <h2 class="pb-8 text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Referências
+                    </h2>
+                    <div v-for="reference in reportById[0].reportReferences" :key="reference.value">
+                        <div class="transition-all hover:scale-105 transform-gpu bg-indigoButtomColor p-6 rounded-2xl shadow-md border-borderColor border">
+                            {{ reference }}
+                        </div>
+                        <div class="py-1"/>
+                    </div>
                 </div>
             </div>
         </section>

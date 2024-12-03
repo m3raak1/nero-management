@@ -519,10 +519,12 @@
       "reportGoal": "O experimento visou investigar a interação entre o Necroplasma e tecidos orgânicos humanos, com foco em processos de fusão, parasitação e mutação. Os resultados demonstraram uma transformação significativa de 95% na morfologia do tecido, acompanhada por emissões energéticas de até 8×1088 \times 10^{8}8×108 joules. Adicionalmente, observou-se uma taxa de absorção de 75%, com propriedades híbridas emergentes e fenômenos visuais inesperados, como pulsos de luz estelar.",
       "reportIntroduction": "O Necroplasma é uma substância anômala com propriedades que desafiam as leis físicas e biológicas conhecidas. Estudos prévios indicam seu alto grau de interação com materiais inorgânicos. Este experimento buscou aprofundar a compreensão dessa interação ao expô-lo a tecidos orgânicos humanos, explorando a viabilidade de parasitação e a extensão de mutações induzidas. A motivação principal era avaliar riscos e oportunidades na aplicação dessa substância em biotecnologia e contenção de ameaças.",
       "reportResults": "Os resultados mostraram uma transformação significativa na morfologia do tecido, com absorção e fusão quase totais.",
-      "reportDiscussion": "A análise dos dados revelou uma interação complexa entre o Necroplasma e o tecido orgânico, sugerindo potenciais aplicações em biotecnologia, embora os riscos ainda sejam significativos.",
+      "reportDiscussion": "A alta taxa de mutação (95%) demonstra a habilidade única do Necroplasma de alterar estruturas biológicas. A absorção de energia pelo tecido (75%) e a emissão energética secundária indicam uma possível fusão entre propriedades do Necroplasma e do tecido orgânico. Fenômenos inesperados, como os pulsos luminosos, sugerem que o Necroplasma pode acessar níveis de energia ou dimensões além do espectro visível, potencialmente conectados a propriedades cósmicas.",
       "reportConclusion": "O Necroplasma reagiu de maneira agressiva ao tecido orgânico humano. A fusão foi irreversível, criando mutações imprevisíveis e deformadas. Observou-se que o tecido parasitado perdeu completamente sua cognição e funcionalidade original, funcionando apenas como veículo para o organismo.",
       "reportReferences": [
-        "Estudo prévio sobre o Necroplasma, Jornal de Pesquisas Anômalas, 2023"
+        "1. Estudo prévio sobre o Necroplasma, Jornal de Pesquisas Anômalas, 2023",
+        "2. Propriedades Cósmicas e Quânticas do Necroplasma, Dr. H. Mallory, Editora Arcane, 2024.",
+        "3. Observações e registros internos de laboratório, 25 de novembro de 2024."
       ],
       "id": "1990"
     },
@@ -536,11 +538,13 @@
       "responsible": 7,
       "reportAuthor": "Carla Menezes",
       "reportGoal": "O objetivo deste experimento foi testar métodos de contenção do Necroplasma e analisar as mutações resultantes.",
+      "reportIntroduction": "Neste estudo, explorou-se a eficácia de diversas técnicas de contenção quando aplicadas ao Necroplasma, uma substância anômala conhecida por sua capacidade de corromper e reconfigurar matéria. Experimentações anteriores indicaram seu comportamento altamente reativo e potencialmente consciente. Este experimento foi conduzido para avaliar a viabilidade de métodos de contenção e as implicações das mutações observadas no material corrompido pelo Necroplasma.",
       "reportResults": "Os experimentos demonstraram que as técnicas tradicionais de contenção são ineficazes contra o Necroplasma.",
       "reportDiscussion": "A análise revelou que o Necroplasma possui propriedades que transcendem a matéria comum, sugerindo a necessidade de novas abordagens para sua contenção.",
       "reportConclusion": "Os testes de contenção revelaram que o Necroplasma não apenas corrompe a matéria, mas a reconfigura em padrões que desafiam a lógica física, como se rejeitasse as leis naturais. Durante os experimentos, sua resposta parecia quase consciente, emitindo pulsos que reagiam à proximidade dos pesquisadores. Essa substância transcende a compreensão material, funcionando como uma manifestação de forças desconhecidas e instáveis, tornando qualquer tentativa de confinamento tradicional inútil.",
       "reportReferences": [
-        "Estudo sobre contenção de substâncias anômalas, Revista de Pesquisa em Contenção, 2023"
+        "1. Estudo sobre contenção de substâncias anômalas, Revista de Pesquisa em Contenção, 2023",
+        "2. Observações e registros internos de laboratório, 25 de novembro de 2024."
       ],
       "id": "0653"
     }
