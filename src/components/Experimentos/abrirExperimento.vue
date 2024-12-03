@@ -35,13 +35,18 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="flex-1 h-screen overflow-y-scroll scroll-m-1" v-if="experiment.research && experiment.responsible && experiment.team">
+    <div class="flex-1 h-screen overflow-y-scroll scroll-m-1 relative" v-if="experiment.research && experiment.responsible && experiment.team">
+        
         <section class="px-12 pt-12 text-4xl font-sans">
-            <span class="text-transparent bg-silver-gradient bg-clip-text">Pesquisas</span>
+            <span class="text-transparent bg-silver-gradient bg-clip-text">Experimento</span>
         </section>
         <section class="py-8 px-12">
+            
             <div
-                class="  border rounded-3xl bg-indigoNavbarBg border-indigoNavbarSt">
+                class="  border rounded-b-3xl rounded-tl-3xl bg-indigoNavbarBg border-indigoNavbarSt relative">
+                <div class="absolute bg-indigoNavbarBg bottom-full right-0 p-3 rounded-t-2xl border border-borderColor">
+                    <p class="bg-clip-text text-transparent bg-silver-gradient">{{ experiment.research.title }}</p>
+                </div>
                 <!-- Titulo/Primeira Sessão -->
                 <div class=" p-7">
                     <div class="flex justify-between">

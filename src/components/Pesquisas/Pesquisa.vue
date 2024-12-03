@@ -16,7 +16,7 @@ defineProps({
         <div class="transition-all hover:scale-105 transform-gpu bg-indigoButtomColor p-6 rounded-2xl shadow-md border-borderColor border">
             <router-link :to="`pesquisas/${search.researchId}`">
                 <div class="flex justify-between">
-                    <h2 class="text-xl text-transparent bg-red-gradient bg-clip-text font-bold">{{ search.title }}</h2>
+                    <h2 class="text-xl text-transparent bg-ruby-gradient bg-clip-text font-bold">{{ search.title }}</h2>
                     <div class="h-auto flex">
                         <span class="text-white h-full flex items-center bg-sapphire-gradient px-4 rounded-3xl text-sm">Responsável: {{ search.responsible.name }}</span>
                         <span class="text-white h-full flex items-center bg-emerald-gradient px-4 ml-4 rounded-3xl text-sm">Status: {{ String(search.status).charAt(0).toUpperCase() + String(search.status).slice(1) }}</span>
