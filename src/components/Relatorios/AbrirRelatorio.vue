@@ -55,14 +55,14 @@ const reportById = computed(() => {
                     </div>
                     <h2 class=" pt-2 text-xl text-transparent bg-light-red-gradient bg-clip-text font-bold">{{
                         reportById[0].reportSubtitle }}</h2>
-                    <p class="pt-10 text-white">
+                    <p class="pt-7 text-white">
                         {{ reportById[0].reportGoal }}
                     </p>
                 </div>
                 <!-- Resumo/Segunda Sessão -->
                 <div class=" p-7 border-t border-indigoNavbarSt">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Introdução</h2>
-                    <p class="pb-5 pt-10 text-white">
+                    <p class="pb-5 pt-5 text-white">
                         {{ reportById[0].reportIntroduction }}
                     </p>
                 </div>
@@ -70,7 +70,7 @@ const reportById = computed(() => {
                 <div v-if="reportById[0].reportConclusion" class=" p-7 border-t border-indigoNavbarSt">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Discussão
                     </h2>
-                    <p class="pb-5 pt-10 text-white">
+                    <p class="pb-5 pt-5 text-white">
                         {{ reportById[0].reportDiscussion }}
                     </p>
                 </div>
@@ -78,7 +78,7 @@ const reportById = computed(() => {
                 <div v-if="reportById[0].reportConclusion" class=" p-7 border-t border-indigoNavbarSt">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Conclusão
                     </h2>
-                    <p class="pb-5 pt-10 text-white">
+                    <p class="pb-5 pt-5 text-white">
                         {{ reportById[0].reportConclusion }}
                     </p>
                 </div>
