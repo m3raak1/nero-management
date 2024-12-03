@@ -5,6 +5,7 @@ import AbrirPesquisaView from '../views/AbrirPesquisaView.vue';
 import ExperimentsView from '@/views/ExperimentsView.vue';
 import NovaPesquisa from '@/components/Pesquisas/NovaPesquisa.vue';
 import RelatoriosView from '@/views/RelatoriosView.vue';
+import AbrirRelatorioView from '@/views/AbrirRelatorioView.vue';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,7 +39,12 @@ const router = createRouter({
             path: '/relatorios',
             name: 'relatorios',
             component: RelatoriosView
-        }
+        },
+        {
+            path: '/relatorios/:id',
+            name: 'abrirrelatorio',
+            component: AbrirRelatorioView
+        },
     ]
 });
 
