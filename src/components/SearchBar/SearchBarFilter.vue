@@ -33,10 +33,10 @@ const sendData = (event) => {
 </script>
 
 <template>
-  <div class="absolute -translate-x-1/2 left-1/2 top-full z-10 flex items-center flex-col w-5/6 h-[230%] overflow-clip">
+  <div class="absolute -translate-x-1/2 left-1/2 top-full z-10 flex items-center flex-col w-5/6 h-[230%] overflow-clip pointer-events-none">
     <div
       :class="[
-        'w-full bg-indigoBackground border-borderColor border p-4 rounded-b-2xl absolute transition-transform duration-300',
+        'w-full bg-indigoBackground border-borderColor border p-4 rounded-b-2xl absolute transition-transform duration-300 pointer-events-auto',
         active ? 'translate-y-0' : '-translate-y-full'
       ]"
     >
