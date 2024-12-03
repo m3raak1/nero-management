@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import PesquisasView from '../views/PesquisasView.vue';
 import HomeView from '../views/HomeView.vue';
 import AbrirPesquisaView from '../views/AbrirPesquisaView.vue';
+import AbrirExperimentoView from '../views/AbrirExperimentoView.vue';
 import ExperimentsView from '@/views/ExperimentsView.vue';
 import NovaPesquisa from '@/components/Pesquisas/NovaPesquisa.vue';
 import RelatoriosView from '@/views/RelatoriosView.vue';
@@ -34,6 +35,11 @@ const router = createRouter({
             path: '/experimentos',
             name: 'experimentos',
             component: ExperimentsView 
+        },
+        {
+            path: '/experimentos/:id',
+            name: 'abrirexperimentos',
+            component: AbrirExperimentoView 
         },
         {
             path: '/relatorios',
