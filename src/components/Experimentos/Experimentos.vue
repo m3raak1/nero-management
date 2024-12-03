@@ -97,7 +97,7 @@ provide("sendFilter", handleFilter)
                     <!-- Obtém valor digitado na SearchBar -->
                     <SearchBar @search="handleSearch"/>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-8 px-12 pb-12 rounded-lg">
                     <!-- Recebe valores do catálogo ou valores filtrados -->
                     <Pesquisa :filteredResults="filteredResults"/>
                 </div>

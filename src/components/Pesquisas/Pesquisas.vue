@@ -54,6 +54,8 @@ const filteredResults = computed(() => {
     );
   }
 
+  console.log(filters.value)
+
   results = results.filter(research => {
     return Object.entries(filters.value).every(([key, value]) =>
       !value || (research[key].name && research[key].name === value)

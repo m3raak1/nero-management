@@ -12,7 +12,6 @@ onMounted(async () => {
   
   const teamsResponse = await fetch('http://localhost:3000/teams');
   dataFilter.value.teams = await teamsResponse.json();
-
 });
 
 const active = ref(false);
@@ -50,7 +49,7 @@ const sendData = (event) => {
             @change="sendData"
           >
             <option value="" class="bg-indigoBackground">Desligado</option>
-            <option v-for="(el, i) in dataFilter.teams" :value="el.id" class="bg-indigoBackground">{{ el.name }}</option>
+            <option v-for="(el, i) in dataFilter.teams" :value="el.name" class="bg-indigoBackground">{{ el.name }}</option>
           </select>
         </div>
         <div>
@@ -61,7 +60,7 @@ const sendData = (event) => {
             @change="sendData"
           >
             <option value="" class="bg-indigoBackground">Desligado</option>
-            <option v-for="(el, i) in dataFilter.users" :value="el.id" class="bg-indigoBackground">{{ el.name }}</option>
+            <option v-for="(el, i) in dataFilter.users" :value="el.name" class="bg-indigoBackground">{{ el.name }}</option>
           </select>
         </div>
       </div>

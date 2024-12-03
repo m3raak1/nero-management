@@ -12,8 +12,11 @@ defineProps({
 
 
 <template>
-    <div v-for="search in filteredResults" :key="search.experimentId">
-        <div class="transition-all hover:scale-105 transform-gpu bg-indigoButtomColor p-6 rounded-2xl shadow-md border-borderColor border">
+    <div class="relative" v-for="search in filteredResults" :key="search.experimentId">
+        <div class="transition-all hover:scale-105 transform-gpu bg-indigoButtomColor p-6 rounded-b-2xl rounded-tr-2xl shadow-md border-borderColor border">
+            <div class="absolute bg-indigoButtomColor bottom-full left-0 p-3 rounded-t-2xl border border-borderColor">
+                <p class="bg-clip-text text-transparent bg-silver-gradient">{{ search.research.title }}</p>
+            </div>
             <router-link :to="`experimentos/${search.experimentId}`">
                 <div class="flex justify-between">
                     <h2 class="text-xl text-transparent bg-red-gradient bg-clip-text font-bold w-4/6">{{ search.experimentTitle }}</h2>
