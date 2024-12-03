@@ -88,7 +88,7 @@ provide("sendFilter", handleFilter)
 <template>
     <div class="flex-1 h-screen overflow-y-scroll scroll-m-1">
         <section class="px-12 pt-12 text-4xl font-sans">
-            <span class="text-transparent bg-silver-gradient bg-clip-text">Pesquisas</span>
+            <span class="text-transparent bg-silver-gradient bg-clip-text">Experimentos</span>
         </section>
         <!-- Aba de pesquisas -->
         <section class="py-8 px-12">

@@ -40,7 +40,7 @@ defineProps({
                 <Svg name="Relatórios" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton" />
             </router-link>
         </div>
-        <div class=" place-self-end ">
+        <div class=" place-self-end hidden">
             <router-link class="" to="/equipes">
                 <Svg name="Equipes" class="transition-all drop-shadow-md hover:drop-shadow-xl rounded-l-full hover:bg-indigoHoverButton fill-black" />
             </router-link>
