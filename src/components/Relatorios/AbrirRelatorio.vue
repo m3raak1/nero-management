@@ -2,14 +2,11 @@
 import Svg from '../Svg.vue';
 import { useRoute } from 'vue-router';
 import { onMounted, ref, computed } from 'vue';
-import QuantityTable from '../QuantityTable.vue';
 //Obtém o id desejado
 const route = useRoute();
 const reportId = Number(route.params.id);
 //Obtém resposta de JSON Server
 const reportsCatalog = ref([]);
-const experimentsCatalog = ref([]);
-const resultsCatalog = ref([])
 onMounted(async () => {
     const response = await fetch('http://localhost:3000/reportsCatalog')
     const reportJson = await response.json();
@@ -24,10 +21,6 @@ onMounted(async () => {
         element.team = teamArray[0]
     }
     reportsCatalog.value = reportJson;
-
-    let resultsArray = []
-
-    resultsCatalog.value = resultsArray;
 })
 //Obtém elemento desejado
 const reportById = computed(() => {
