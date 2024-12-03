@@ -74,11 +74,6 @@ const reportById = computed(() => {
                         {{ reportById[0].reportConclusion }}
                     </p>
                 </div>
-                <!-- REFERÊNCIAS -->
-                <div v-if="reportById[0].reportConclusion" class=" p-7 border-t border-indigoNavbarSt">
-                    <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Referências
-                    </h2>
-                </div>
             </div>
         </section>
     </div>
