@@ -53,15 +53,17 @@ const reportById = computed(() => {
                             </span>
                         </div>
                     </div>
+                    <h2 class=" pt-2 text-xl text-transparent bg-light-red-gradient bg-clip-text font-bold">{{
+                            reportById[0].reportSubtitle }}</h2>
                     <p class="pt-10 text-white">
-                        {{ reportById[0].reportConclusion }}
+                        {{ reportById[0].reportGoal }}
                     </p>
                 </div>
                 <!-- Resumo/Segunda Sessão -->
                 <div class=" p-7 border-t border-indigoNavbarSt">
                     <h2 class="text-2xl text-transparent bg-red-gradient bg-clip-text font-bold">Introdução</h2>
                     <p class="pb-5 pt-10 text-white">
-                        {{ reportById[0].summary }}
+                        {{ reportById[0].reportIntroduction }}
                     </p>
                 </div>
                 <!-- CONCLUSÃO -->
