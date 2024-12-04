@@ -30,7 +30,7 @@ defineProps({
                         <span class="text-white flex items-center justify-between bg-ruby-gradient py-2 px-4 rounded-3xl text-sm"><p class="my-auto">{{ search.endDate }}</p> <Svg name="date" class="ml-2 -mt-1"/></span>
                     </div>
                 </div>
-            <!/router-link>
+            </router-link>
         </div>
     </div>
 </template>
