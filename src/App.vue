@@ -5,7 +5,6 @@ import { RouterView } from 'vue-router';
 
 <template>
   <div class="flex min-h-screen bg-indigoBackground">
-    <Sidebar />
     <RouterView />
   </div>
 </template>
