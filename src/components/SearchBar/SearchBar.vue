@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import searchIcon from '../../assets/img/procurar 1.png'
 import SearchBarFilter from './SearchBarFilter.vue';
 import Svg from '../Svg.vue';
+import { RouterLink } from 'vue-router';
 
 
 const emit = defineEmits(['search'])
@@ -55,6 +56,9 @@ defineProps({
                     <Svg name="clock"/>
                     <Svg name="pointer" :class="['absolute -top-2 -right-3 cursor-pointer transition-all', order.type === 'time' ? 'block' : 'hidden', order.direction === 'up' ? 'rotate-180' : 'rotate-0']"/>
                 </span>
+                <RouterLink to="/pesquisa/nova" class="relative cursor-pointer text-2xl">
+                    +
+                </RouterLink>
             </div>
         </div>
         <SearchBarFilter :filters="filters"/>

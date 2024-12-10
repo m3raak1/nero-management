@@ -91,7 +91,7 @@ const sendData = (event) => {
   <span
     :class="[
       'absolute bg-indigoBackground px-2 py-3 rounded-b-2xl border-borderColor border-b border-x hover:cursor-pointer z-20 -translate-x-1/2 left-1/2 transition-transform duration-300',
-      !active ? 'translate-y-[100%]' : 'translate-y-[460%]'
+      !active ? 'translate-y-[100%]' : (filters.research === undefined ? 'translate-y-[400%]' : 'translate-y-[480%]' )
     ]"
     @click="toggleFilter"
   >
