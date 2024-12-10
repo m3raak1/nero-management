@@ -1,36 +1,36 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import axios from 'axios';
+import { dataManager } from '@/utils/dataManager.js';
 
 const teamsCatalog = ref([]);
 const usersCatalog = ref([]);
 
 onMounted(async () => {
   // Fetching teams and users data on component mount
-  const teamsResponse = await fetch('http://localhost:3000/teams');
+  const teamsResponse = await fetch(`${dataManager.url}/teams`);
   const teamsData = await teamsResponse.json();
   teamsCatalog.value = teamsData;
 
-  const usersResponse = await fetch('http://localhost:3000/users');
+  const usersResponse = await fetch(`${dataManager.url}/users`);
   const usersData = await usersResponse.json();
   usersCatalog.value = usersData;
 });
 
 const inputData = ref({
-    title: 'Algum Ai',
-    team: 'Alfa',
+    title: '',
+    team: '',
     startDate: '',
-    responsible: 'Ayla Nogueira',
-    objective: 'algum ai',
-    summaryTitle: 'algum ai',
-    summary: 'algum ai'
+    responsible: '',
+    objective: '',
+    summaryTitle: '',
+    summary: ''
 });
 
 const tried = ref(false);
 
 async function postData(data = {}) {
     console.log("Enviando dados:", JSON.stringify(data));
-    const response = await fetch('http://localhost:3000/researchCatalog', {
+    const response = await fetch(`${dataManager.url}/researchCatalog`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -55,12 +55,12 @@ const transformObj = async (obj) => {
     };
 
     // Get the total number of research items (to set researchId)
-    const response = await fetch('http://localhost:3000/researchCatalog');
+    const response = await fetch(`${dataManager.url}/researchCatalog`);
     const data = await response.json();
     newObj.researchId = data.length + 1; // Number of items in the researchCatalog
 
     // Fetch user data to get responsible userId
-    const response2 = await fetch(`http://localhost:3000/users?name=${obj.responsible}`);
+    const response2 = await fetch(`${dataManager.url}/users?name=${obj.responsible}`);
     const data2 = await response2.json();
     if (data2.length > 0) {
         newObj.responsible = data2[0].userId;
@@ -69,7 +69,7 @@ const transformObj = async (obj) => {
     }
 
     // Fetch team data to get teamId
-    const response3 = await fetch(`http://localhost:3000/teams?name=${obj.team}`);
+    const response3 = await fetch(`${dataManager.url}/teams?name=${obj.team}`);
     const data3 = await response3.json();
     if (data3.length > 0) {
         newObj.team = data3[0].teamId;

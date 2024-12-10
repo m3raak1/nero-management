@@ -2,21 +2,23 @@
 import Svg from '../Svg.vue';
 import { useRoute } from 'vue-router';
 import { onMounted, ref, computed } from 'vue';
+import { dataManager } from '@/utils/dataManager.js';
+
 //Obtém o id desejado
 const route = useRoute();
 const reportId = Number(route.params.id);
 //Obtém resposta de JSON Server
 const reportsCatalog = ref([]);
 onMounted(async () => {
-    const response = await fetch('http://localhost:3000/reportsCatalog')
+    const response = await fetch(`${dataManager.url}/reportsCatalog`)
     const reportJson = await response.json();
 
     for (let element of reportJson) {
-        const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
+        const responsibleResponse = await fetch(`${dataManager.url}/users?userId=${element.responsible}`);
         const responsibleArray = await responsibleResponse.json();
         element.responsible = responsibleArray[0]
 
-        const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.team}`);
+        const teamResponse = await fetch(`${dataManager.url}/teams?teamId=${element.team}`);
         const teamArray = await teamResponse.json();
         element.team = teamArray[0]
     }

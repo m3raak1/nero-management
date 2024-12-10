@@ -2,19 +2,21 @@
 import Pesquisa from '@/components/Pesquisas/Pesquisa.vue';
 import SearchBar from '@/components/SearchBar/SearchBar.vue';
 import { onMounted, ref, computed, provide } from 'vue';
+import { dataManager } from '@/utils/dataManager.js';
+
 
 const researchCatalog = ref([]);
 
 onMounted(async () => {
-  const response = await fetch('http://localhost:3000/researchCatalog');
+  const response = await fetch(`${dataManager.url}/researchCatalog`);
   const data = await response.json();
 
   for (let element of data) {
-    const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
+    const responsibleResponse = await fetch(`${dataManager.url}/users?userId=${element.responsible}`);
     const responsibleArray = await responsibleResponse.json();
     element.responsible = responsibleArray[0]
 
-    const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.team}`);
+    const teamResponse = await fetch(`${dataManager.url}/teams?teamId=${element.team}`);
     const teamArray = await teamResponse.json();
     element.team = teamArray[0]
   }

@@ -2,25 +2,26 @@
 import Pesquisa from '@/components/Experimentos/Experimento.vue';
 import SearchBar from '@/components/SearchBar/SearchBar.vue';
 import { onMounted, ref, computed, provide } from 'vue';
+import { dataManager } from '@/utils/dataManager.js';
 
 const experimentCatalog = ref([]);
 
 onMounted(async () => {
-    const response = await fetch('http://localhost:3000/experimentsCatalog');
+    const response = await fetch(`${dataManager.url}/experimentsCatalog`);
     const data = await response.json();
 
     for (let element of data) {
-        const researchResponse = await fetch(`http://localhost:3000/researchCatalog?researchId=${element.researchId}`);
+        const researchResponse = await fetch(`${dataManager.url}/researchCatalog?researchId=${element.researchId}`);
         const researchArray = await researchResponse.json();
         element.research = researchArray[0]
 
-        const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
+        const responsibleResponse = await fetch(`${dataManager.url}/users?userId=${element.responsible}`);
         const responsibleArray = await responsibleResponse.json();
         element.responsible = responsibleArray[0]
     } 
 
     for (let element of data) {
-        const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.research.team}`);
+        const teamResponse = await fetch(`${dataManager.url}/teams?teamId=${element.research.team}`);
         const teamArray = await teamResponse.json();
         element.research.team = teamArray[0]
         element.team = element.research.team

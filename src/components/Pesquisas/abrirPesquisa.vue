@@ -5,6 +5,7 @@ import { onMounted, ref, computed } from 'vue';
 import Experimentos from '../Pesquisas/Experimentos.vue';
 import Relatorios from '../Pesquisas/Relatorios.vue';
 import QuantityTable from '../QuantityTable.vue';
+import { dataManager } from '@/utils/dataManager.js';
 //Obtém o id desejado
 const route = useRoute();
 const researchId = Number(route.params.id);
@@ -15,26 +16,26 @@ const experimentsCatalog = ref([]);
 const resultsCatalog = ref([])
 const reportsCatalog = ref([]);
 onMounted(async () => {
-    const response = await fetch('http://localhost:3000/researchCatalog')
+    const response = await fetch(`${dataManager.url}/researchCatalog`)
     const researchJson = await response.json();
 
     for (let element of researchJson) {
-        const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
+        const responsibleResponse = await fetch(`${dataManager.url}/users?userId=${element.responsible}`);
         const responsibleArray = await responsibleResponse.json();
         element.responsible = responsibleArray[0]
 
-        const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${element.team}`);
+        const teamResponse = await fetch(`${dataManager.url}/teams?teamId=${element.team}`);
         const teamArray = await teamResponse.json();
         element.team = teamArray[0]
     }
 
     researchCatalog.value = researchJson;
 
-    const response2 = await fetch('http://localhost:3000/experimentsCatalog')
+    const response2 = await fetch(`${dataManager.url}/experimentsCatalog`)
     const experimentJson = await response2.json();
 
     for (let element of experimentJson) {
-        const responsibleResponse = await fetch(`http://localhost:3000/users?userId=${element.responsible}`);
+        const responsibleResponse = await fetch(`${dataManager.url}/users?userId=${element.responsible}`);
         const responsibleArray = await responsibleResponse.json();
         element.responsible = responsibleArray[0]
     } 
@@ -49,7 +50,7 @@ onMounted(async () => {
     resultsCatalog.value = resultsArray;
     experimentsCatalog.value = experimentJson;
 
-    const response3 = await fetch('http://localhost:3000/reportsCatalog')
+    const response3 = await fetch(`${dataManager.url}/reportsCatalog`)
     reportsCatalog.value = await response3.json();
 })
 //Obtém elemento desejado

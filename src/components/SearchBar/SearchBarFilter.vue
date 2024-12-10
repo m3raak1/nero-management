@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, inject } from 'vue';
 import Svg from '../Svg.vue';
+import { dataManager } from '@/utils/dataManager';
 
 const props = defineProps({
     filters: Object
@@ -13,10 +14,13 @@ const dataFilter = ref({
     research: [],
 });
 onMounted(async () => {
-  const usersResponse = await fetch('http://localhost:3000/users');
+  const usersResponse = await fetch(`${dataManager.url}/users`);
   dataFilter.value.users = await usersResponse.json()
 
-  const researchResponse = await fetch('http://localhost:3000/researchCatalog');
+  const teamsResponse = await fetch(`${dataManager.url}/teams`);
+  dataFilter.value.teams = await teamsResponse.json()
+
+  const researchResponse = await fetch(`${dataManager.url}/researchCatalog`);
   dataFilter.value.research= await researchResponse.json();
 });
 

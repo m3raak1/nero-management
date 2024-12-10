@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import QuantityTable from '../QuantityTable.vue';
+import { dataManager } from '@/utils/dataManager.js';
 
 const route = useRoute();
 const experimentId = Number(route.params.id);
@@ -9,21 +10,21 @@ const experimentId = Number(route.params.id);
 const experiment = ref({})
 
 onMounted(async () => {
-    const experimentResponse = await fetch(`http://localhost:3000/experimentsCatalog?experimentId=${experimentId}`)
+    const experimentResponse = await fetch(`${dataManager.url}/experimentsCatalog?experimentId=${experimentId}`)
     const experimentArrayJson = await experimentResponse.json();
     const experimentJson = experimentArrayJson[0]
 
-    const researchResponse = await fetch(`http://localhost:3000/researchCatalog?researchId=${experimentId}`)
+    const researchResponse = await fetch(`${dataManager.url}/researchCatalog?researchId=${experimentId}`)
     const researchArrayJson = await researchResponse.json();
 
     experimentJson.research = researchArrayJson[0];
 
-    const userResponse = await fetch(`http://localhost:3000/users?userId=${experimentId}`)
+    const userResponse = await fetch(`${dataManager.url}/users?userId=${experimentId}`)
     const userArrayJson = await userResponse.json();
 
     experimentJson.responsible = userArrayJson[0];
 
-    const teamResponse = await fetch(`http://localhost:3000/teams?teamId=${experimentId}`)
+    const teamResponse = await fetch(`${dataManager.url}/teams?teamId=${experimentId}`)
     const teamArrayJson = await teamResponse.json();
 
     experimentJson.team = teamArrayJson[0];
