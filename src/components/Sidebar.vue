@@ -14,10 +14,10 @@ defineProps({
 
 <template>
     <section class="w-64 bg-indigoNavbarBg border-r border-indigoNavbarSt">
-        <div class="py-4 px-6">
+        <div class="my-10">
             <!-- User Profile -->
             <router-link class="flex justify-center pt-8" to="/index">
-                <img class=" h-15 w-auto" v-bind:src="userpic" alt="User Picture" />
+                <img class=" h-20 w-auto" v-bind:src="userpic" alt="User Picture" />
             </router-link>
             <!-- User Name -->
             <p class="flex justify-center pt-4 text-white text-2xl font-sans">
