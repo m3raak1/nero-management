@@ -22,7 +22,7 @@
     </main>
 </template>
 
-<style>
+<style scoped>
     input {
         @apply py-3 px-4 text-2xl bg-indigoBackground border border-borderColor rounded-3xl my-3
     }

@@ -34,7 +34,8 @@ const searchFilter = ref('');
 const filterOrder = ref('time-down');
 const filters = ref({
     responsible: '',
-    team: ''
+    team: '',
+    research: '',
 });
 
 const sortResults = (catalog, type) => {
@@ -63,8 +64,9 @@ const filteredResults = computed(() => {
   }
 
   results = results.filter(experiment => {
+    console.log(experiment)
     return Object.entries(filters.value).every(([key, value]) =>
-      !value || (experiment[key].name && experiment[key].name === value)
+      !value || ((experiment[key].title && experiment[key].title === value) || (experiment[key].name && experiment[key].name === value))
     );
   });
 
@@ -95,7 +97,7 @@ provide("sendFilter", handleFilter)
             <div class=" border rounded-3xl bg-indigoNavbarBg border-indigoNavbarSt">
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-4 p-12 rounded-lg">
                     <!-- Obtém valor digitado na SearchBar -->
-                    <SearchBar @search="handleSearch"/>
+                    <SearchBar @search="handleSearch" :filters="filters"/>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-8 px-12 pb-12 rounded-lg">
                     <!-- Recebe valores do catálogo ou valores filtrados -->

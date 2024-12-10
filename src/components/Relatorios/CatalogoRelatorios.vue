@@ -20,13 +20,13 @@ onMounted(async () => {
   }
 
   reportsCatalog.value = data;
+  console.log(data)
 });
 
 const searchFilter = ref('');
 const filterOrder = ref('time-down');
 const filters = ref({
     responsible: '',
-    team: ''
 });
 
 const sortResults = (catalog, type) => {
@@ -87,7 +87,7 @@ provide("sendFilter", handleFilter)
             <div class=" border rounded-3xl bg-indigoNavbarBg border-indigoNavbarSt">
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-4 p-12 rounded-lg">
                     <!-- Obtém valor digitado na SearchBar -->
-                    <SearchBar @search="handleSearch"/>
+                    <SearchBar @search="handleSearch" :filters="filters"/>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-4 px-12 pb-12 rounded-lg">
                     <!-- Recebe valores do catálogo ou valores filtrados -->

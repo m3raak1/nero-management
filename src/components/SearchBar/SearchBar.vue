@@ -34,6 +34,10 @@ const toggleOrder = (type) => {
     })
 }
 
+defineProps({
+    filters: Object
+})
+
 </script>
 
 <template>
@@ -53,6 +57,6 @@ const toggleOrder = (type) => {
                 </span>
             </div>
         </div>
-        <SearchBarFilter/>
+        <SearchBarFilter :filters="filters"/>
     </form>
 </template>
