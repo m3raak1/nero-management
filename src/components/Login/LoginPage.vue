@@ -1,4 +1,27 @@
 <script setup>
+import { dataManager } from '@/utils/dataManager';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+    const router = useRouter();
+
+    const inputData = ref({
+        username: "",
+        password: ""
+    })
+
+    const sendLogin = async () => {
+        const userResponse = await fetch(`${dataManager.url}/users?username=${inputData.value.username}`)
+        const userArrayJson = await userResponse.json();
+        console.log(userArrayJson)
+        if (userArrayJson.lenght !== 1) return;
+        const userJson = userArrayJson[0];
+        console.log(userJson)
+        if (userJson.password !== inputData.value.password) return
+
+        dataManager.user = userJson;
+        router.push('/');
+    }
 </script>
 
 <template>
@@ -7,9 +30,9 @@
             <h1 class="text-8xl font-light">MERA</h1>
             <div class="flex flex-col bg-indigoNavbarBg border border-borderColor rounded-xl p-10 relative">
                 <img class="absolute bottom-[90%] left-1/2 -translate-x-1/2 w-1/4" src="@/assets/img/userpic.png" alt="User Picture" />
-                <input type="text" placeholder="Usuário">
-                <input type="password" placeholder="Password">
-                <button class="text-2xl mt-2">Entrar</button>
+                <input v-model="inputData.username" type="text" placeholder="Usuário">
+                <input v-model="inputData.password" type="password" placeholder="Password">
+                <button @click="sendLogin" class="text-2xl mt-2">Entrar</button>
             </div>
         </section>
         <section class="w-1/2 h-full overflow-hidden relative">
